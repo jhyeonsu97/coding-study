@@ -1,0 +1,10 @@
+merge into sche_mgr s
+   using  dual on 
+        ( s.userid='test1001'  
+         and to_char(s.sche_date,'yyyy-mm-dd')='2023-06-01' )   
+ when matched then 
+    update  set 
+            title='aaa',view1='Y',content='bbb'  
+ when not matched then   
+    insert(unq,userid,sche_date,title,view1,content)  
+    values(sche_mgr_seq.nextval,'test1001','2023-06-01','aaa','Y','bbb')

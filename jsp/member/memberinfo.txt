@@ -1,0 +1,59 @@
+create table memberinfo(
+unq number not null,
+userid varchar2(50) not null,
+userpw varchar2(100) not null,
+name varchar2(20) not null,
+gender char(1) not null,
+birth date not null,
+phone varchar2(20) not null,
+zipcode varchar2(6),
+addr varchar2(100),
+hobby varchar2(50),
+email varchar2(50),
+homepage varchar2(100),
+rdate timestamp,
+constraint memberinfo_userid_pk primary key(userid),
+constraint memberinfo_gender_ck check(gender in('M','F')),
+constraint memberinfo_phone_uq unique(phone)
+);
+
+create sequence memberinfo_seq
+start with 1
+increment by 1
+maxvalue 9999999;
+-------------------------------------------------------
+member - memberWrite.jsp
+	memberWriteSave.jsp
+	idcheck.jsp
+	post1.jsp
+	post2.jsp
+	loginWrtie.jsp
+	loginWrtieSub.jsp
+	logout.jsp
+	memberModify.jsp
+	memberModifySave.jsp
+-----------------------------------------------------
+	passChange.jsp ( 팝업)
+
+- 변경암호 1, 2 동일여부
+현재암호 	[		]
+변경암호1	[		] 1 
+변경암호2 [		] 2 비교
+	[적용] [취소]
+-----------------------------------------------------
+	passChangeSub.jsp
+(1) 현재암호 일치여부
+(2) 일치할 경우 암호 변경
+-----------------------------------------------------
+[인증]
+-----------------------------------------------------
+1. 의미 : 인증 변수 존재 여부
+2. 종류 : 세션 / 쿠키 --> 클래스 ;; int a = 1212;
+3. 로그인 상황 : 인증 변수 존재 (o)
+4. 로그아웃 상황 : 인증 변수 미존재 (x)
+-----------------------------------------------------
+		저장위치  /   off   /  보안
+a. 세션 클래스 변수 : 서버(하드)	  유지       1
+b. 쿠키 클래스 변수 : 로컬(하드)	  유지       2
+c. 일반 클래스 변수 : 메모리	  삭제       3
+-----------------------------------------------------
