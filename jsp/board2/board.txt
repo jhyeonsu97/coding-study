@@ -1,0 +1,66 @@
+board - (1) 등록화면 : board1Write.jsp > 제목, 암호, 글쓴이, 내용
+           (2) 목록처리 : board1WriteSave.jsp
+           (3) 목록화면 : board1List.jsp > 제목, 암호, 글쓴이, 조회수, 등록일 > 제목 클릭시 상세화면(unq)로 이동
+           (4) 상세화면 : board1Detail.jsp > 제목 이름, 글쓴이, 내용, 등록일 > 이전, 수정, 삭제버튼
+           (5) 수정화면 : board1Modify.jsp
+           (6) 수정처리 : board1ModifySave.jsp
+           (7) 암호확인 : board1Pass.jsp
+           (8) 삭제처리 : board1Delete.jsp
+
+테이블 - board1
+(1) 고유번호	- unq	숫자
+(2) 제목		- title	문자
+(3) 암호 		- pass	문자
+(4) 글쓴이 	- name	문자
+(5) 내용 		- content	문자
+(6) 조회수		- hits	숫자
+(7) 최초등록일/시	- rdate	날짜/시간
+(8) 최종수정일/시	- udate	날짜/시간
+
+<! -- oracle 설정 -->
+create table board1(
+unq number not null,
+title varchar2(100) not null,
+pass varchar2(100) not null,
+name varchar2(20),
+content varchar2(4000),
+hits number default '0', -- 널값(누락)방지
+rdate timestamp,
+udate timestamp,
+constraint board1_unq_pk primary key(unq)
+);
+
+create sequence board1_seq
+start with 1
+increment by 1
+maxvalue 99999;
+-----------------------------------------------------
+<!-- mysql 설정 -->
+create table board1(
+unq int not null primary key,
+title varchar(100) not null,
+pass varchar(100) not null,
+name varchar(20),
+content text,
+hits int default '0', -- 널값(누락)방지
+rdate datetime,
+udate datetime
+);
+-----------------------------------------------------
+select 
+	unq , title , name , hits , to_char(rdate,'yyyy-mm-dd') rdate 
+from board1 
+order by unq desc
+-----------------------------------------------------
+한 화면에 10개씩 세팅
+select b. *from (
+	select rownum rn, a. * from ( 
+		select 
+		unq , title , name , hits , to_char(rdate,'yyyy-mm-dd') rdate 
+		from board1 
+		order by unq desc) a ) b
+where
+	rn>=1 and rn <=10;		-- 1page
+	rn>=11 and rn <=20; 	-- 2page
+	rn>=21 and rn <=30; 	-- 3page
+	rn>=31 and rn <=40; 	-- 4page

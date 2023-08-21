@@ -1,0 +1,37 @@
+1. 등록화면 - reboardWrite.jsp
+2. 등록 저장처리 - reboardWriteSave.jsp
+3. 목록화면 -  reboardList.jsp
+4. 상세화면 -  reboardDetail.jsp
+5. 수정화면 -  reboardModify.jsp
+6. 수정 저장처리 -  reboardModifySave.jsp
+7. 암호확인 화면 - passWrite.jsp
+8. 삭제처리 -  reboardDelete.jsp
+9. 답변화면 - replyWrite.jsp
+10. 답변 저장처리 -  replyWriteSave.jsp
+
+CREATE TABLE reboard(
+unq number not null primary key,
+title varchar2(100) not null,
+pass varchar2(100) not null,
+name varchar2(20),
+content varchar2(4000),
+hits number default 0,
+rdate timestamp,
+gid number not null,
+thread varchar2(50) not null
+);
+----------------------------------------------------
+create sequence reboard_seq
+start with 1
+increment by 1
+maxvalue 99999;
+----------------------------------------------------
+me -> 
+	select nvl(max(gid),0)+1 as mygid from reboard;
+	--> 1
+---------------------------------------------------
+{unq}
+select	
+	thread from reboard
+where
+	unq='unq';
