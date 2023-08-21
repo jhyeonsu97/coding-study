@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>jquery 폼체크 (select 상자)</title>
+  <script src="js/jquery-3.6.0.js"></script>
+  <script src="js/jquery-ui.js"></script>
+ </head>
+ <script>
+ $(function () {
+	$("#button1").click(function() {
+		if ($("#subject").val() == "" ){
+			alert("과목을 선택해주세요.");
+		} else {
+			alert( $("#subject").val() );
+		}
+	});
+ });
+
+ </script>
+ <body>
+수강과목을 선택 :
+ <select id ="subject" size="4" multiple>
+ 	<option value=""> -선택 - </option>
+	<option value="html"> html </option>
+	<option value="css"> css </option>
+	<option value="java"> java </option>
+</select>
+<button type ="button" id="button1">전송</button>
+ </body>
+</html>
