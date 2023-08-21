@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ var cal = new Date();
+
+ var year = cal.getFullYear();
+ var month = cal.getMonth()+1;
+ var date = cal.getDate();
+ var day = cal.getDay();
+
+ var hours = cal.getHours();
+ var minutes = cal.getMinutes();
+ var seconds = cal.getSeconds();
+
+ document.write(year + '/' + month + '/' + date);
+ document.write("<br>");
+ document.write(hours + ':' + minutes + ':' + seconds);
+ document.write("<br>");
+ document.write(day);
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

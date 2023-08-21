@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <style>
+.wrap {
+ 	 width:1000px;
+	 height:1000px;
+	 margin:0px auto;
+	 }
+
+ a {
+ 	text-decoration:none;
+	color:inherit;
+	margin:0px auto;
+	}
+ 
+table {
+	width:70%;
+	position:relative;  
+	 margin:0px auto;
+	}
+</style>
+
+<script>
+function fn_popup() {
+	var url = "http://www.jejurentacar.com/bbs/password_lost.php"
+	window.open(url, "아이디 비밀번호 찾기", "width=400, height=300, left=200, top=300, resizable=yes, status=yes");
+
+</script>
+
+ <body>
+ <div class="wrap">
+ <div style="margin-top:100px;">
+ <table border="0"  bgcolor="#ffffff">
+			<tr>	
+				<td><font size="3"><b>로그인</b></td>
+			</tr>
+</table><br>
+ <table border="1" width="500" cellpadding="" >
+ 	<tr align="center">
+		<td>
+			<table border="0" width="400">
+			<tr>	
+				<td>아이디</td>
+				<td><input type="text" autofocus></td>
+				<td rowspan="2"><a href="http://www.jejurentacar.com/"><input type="button"  value="로그인" style="height:50px; background:#99cc00;"></td>
+			</tr>
+			<tr>
+				<td>비밀번호</td>
+				<td><input type="password"></td>
+			</tr>
+			<tr >
+				<td><input type="checkbox">자동로그인</td>
+			</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table  bgcolor="#dfdfdf" border="0" cellpadding="10">
+	<tr>
+		<td>회원 로그인 안내</td>
+	</tr>
+	<tr>
+		<td><font size="2">회원아이디 및 비밀번호가 기억 안나실 때는 아이디/비밀번호 찾기를 이용하십시오.<br>
+				아직 회원이 아니시라면 회원가입으로 가입 후 이용해 주십시오.</font></td>
+	</tr>
+	<tr align="right">
+		<td>
+		<input type="button" value="아이디 비밀번호 찾기" style="background:#99cc00;" onclick="window.open('C:/html_test/20th/search.html', '', 'width=400, height=400 ' )"></td>
+		<Td><a href="http://www.jejurentacar.com/bbs/register.php">
+		<input type="button" value="회원가입" style="background:white;"></td>
+	</tr>
+</table>
+	
+<br>
+<table>
+	<TR align="center">
+		<td><a href="http://www.jejurentacar.com/">메인으로 돌아가기</a></td>
+	</tr>
+</div>
+  
+ </body>
+ 
+</html>
