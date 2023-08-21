@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <style>
+	body {
+		text-align:center;
+ }
+	header {
+		background-color:#ffcc00;
+		height:100px;
+		line-height:100px;
+ }
+ 	nav {
+		background-color:pink;
+		height:80px;
+		/* line-height:80px; */
+ }
+ 	section {
+		background-color:#00cc00;
+		height:400px;
+		/* line-height:300px; */
+ }
+ 	footer {
+		background-color:skyblue;
+		height:50px;
+		/* line-height:50px; */
+ }
+ </style>
+
+ <body>
+
+ <header>Header 영역</header>
+
+ <nav>
+	 <table border="0" width="300">
+ 	<tr bgcolor="#cccccc">
+		<th height="30"><a href="loginWrite.html">로그인</a></th>
+		<th><a href="memberAgree.html">회원가입</a></th>
+		<th><a href="borderList.html">게시판</a></th>
+	</tr>
+ </table>
+ </nav>
+
+ <section>
+	<table border="0" width="800">
+		<tr>
+			<th>
+			<iframe src="c/html_test/6th/message_agree.txt" width="700" height="300" frameborder="0"></iframe>	
+			</th>
+		</tr>
+		<tr>
+			<th>
+			<input type="checkbox" name="chk" value="">
+			위 약관에 동의합니다.(필수)
+			</th>
+		</tr>
+		<tr>
+			<th>
+			<input type="button" value="동의합니다." 
+				   onclick="location='memberWrite.html'">	
+			</th>
+		</tr>
+	 </table>
+ </section>
+
+ <footer>Footer 영역</footer>
+
+
+ </body>
+</html>

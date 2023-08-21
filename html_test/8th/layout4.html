@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>레이아웃 예제4</title>
+ </head>
+
+ <style>
+	.wrap {
+		width:800px;
+		height:500px;
+ }
+	body {
+		font-size:20px;
+		font-family:맑은고딕;
+		text-align:center;
+ }
+	header {
+		width:800px;
+		height:100px;
+		line-height:100px;
+		background-color:#cccccc;
+		border:1px solid #ff0000;
+ }
+	section {
+		float:left;
+		width:500px;
+		height:300px;
+		line-height:300px;
+		background-color:#cccccc;
+		border:1px solid #ff0000;
+ }
+ 	article {
+		margin-top:-130px;
+		margin-left:50px;
+		width:400px;
+		height:100px;
+		line-height:100px;
+		background-color:#999999;
+		border:1px solid #ff0000;
+		vertical-align:bottom;
+
+ }
+	aside {
+		margin-top:-398px;
+		position:relative;
+		left:500px;
+		width:300px;
+		height:300px;
+		line-height:300px;
+		background-color:#cccccc;
+		border:1px solid #ff0000;
+ }
+	footer {
+		width:800px;
+		height:100px;
+		line-height:100px;
+		background-color:#cccccc;
+		border:1px solid #ff0000;
+ }
+
+
+ </style>
+
+
+ <body>
+ 
+ <div class="wrap">
+	 <header>header</header>
+	 <section> 
+			section
+				<article>
+					article
+				</article>
+		</div>
+	 </section>
+	 <aside>
+		<div style="position:relative;top:-300px;">
+			aside
+	 </aside>
+	 <footer>footer</footer>
+ </div>
+
+ </body>
+</html>

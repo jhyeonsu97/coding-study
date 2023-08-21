@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+ 
+ <table border="1">
+ <!-- caption : 테이블의 설명 또는 테이블을 정의할 때 사용 / 테이블 요소 바로 아래에 위치함
+	  colgroup : 테이블의 열을 그룹으로 묶을 때 사용 / 열 전체에 다른 스타일을 적용할 때 유리
+	  col : <colgroup> 하위 태그 / 각 열의 속성을 정의할 때 사용
+	  thead / tbody / tfoot : html 테이블에서 내용들을 분리하여 묶을 때 사용
+ -->
+ 	<caption>학생정보목록</caption>
+	<colgroup>
+		<col width="100"/>
+		<col width="150"/>
+		<col width="200"/>
+	</colgroup>
+	<thead>
+ 	<tr>
+		<th>학번</th>
+		<th>이름</th>
+		<th>학과</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	<tr>
+		<td>2020123456</td>
+		<td>홍길동</td>
+		<td>컴퓨터공학과</td>
+	</tr>
+	<tr>
+		<td>20201775533</td>
+		<td>길버트</td>
+		<td>영어영문학과</td>
+	</tr>
+	</tbody>
+ </table>
+
+ </body>
+</html>

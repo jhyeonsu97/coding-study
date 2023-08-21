@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+<style>
+body {
+	font-size:12px;
+	font-family:맑은 고딕;
+	color:#161616;
+}
+a {
+	text-decoration:none;
+	color:#000000;
+}
+.wrap {
+	width:1200px;
+	height:1000px;
+}
+.logo {
+	width:120px;
+	height:
+}
+header {
+	width:100%;
+	height:100px;
+	background:#cccccc;
+}
+nav {
+	margin-top:-12px;
+	width:100%;
+	height:50px;
+	background:#ffffcc;
+}
+aside {
+	float:left;
+	width:200px;
+	height:400px;
+	background:#996633;
+}
+section {
+	width:1000px;
+	height:400px;
+	margin-left:200px;
+	background:#cccccc;
+}
+footer {
+	width:100%;
+	height:100px;
+	background:#0099ff;
+}
+ul {
+	position:relative;
+	left:10%;
+}
+ul li {
+	margin-top:10px;
+	font-size:12px;
+	color:#555555;
+	background-color:#3399ff;
+	float:left;             /*왼쪽기준으로 가로배치 */
+	line-height:30px;       
+	text-align:center;
+	width:150px;
+	list-style:none;        /*list의 mark를 없앰*/
+	border:1px solid #ffffff;
+}
+
+.wrap_table {
+	width:600px;
+	position:relative;
+	top:20px;
+	left:15%;
+}
+
+</style>
+
+<body>
+
+<div class="wrap">
+
+<header>
+	<div class="logo">로고</div>
+</header>
+<nav>
+	<ul>
+		<li class="menuLink"><a href="#">홈</a></li>
+		<li class="menuLink"><a href="memberAgree.html">회원가입</a></li>
+		<li class="menuLink"><a href="boardList.html">공지사항</a></li>
+		<li class="menuLink"><a href="#">답변게시판</a></li>
+		<li class="menuLink"><a href="loginWrite.html">로그인</a></li>
+		<li class="menuLink"><a href="#">일정관리</a></li>
+	</ul>
+</nav>
+<aside>
+
+</aside>
+<section>
+
+	<div class="wrap_table">
+
+	<table border="1" width="600">
+		<tr>
+			<th width="10%">번호</th>
+			<th width="50%">제목</th>
+			<th width="15%">글쓴이</th>
+			<th width="15%">등록일</th>
+			<th width="10%">조회</th>
+		</tr>
+		<tr align="center">
+			<td>2</td>
+			<td align="left">test2222</td>
+			<td>홍길동</td>
+			<td>2023-04-05</td>
+			<td>15</td>
+		</tr>
+		<tr align="center">
+			<td>1</td>
+			<td align="left">test1111</td>
+			<td>이울림</td>
+			<td>2023-04-01</td>
+			<td>1</td>
+		</tr>
+	</table>
+	<table border="0" width="600">
+		<tr>
+			<td align="right">
+			<input type="button" value="글쓰기" 
+				   onclick="location='boardWrite.html'">
+			</td>
+		</tr>
+	</table>
+
+	</div>
+
+</section>
+
+<footer>
+
+</footer>
+
+</div>
+
+</body>
+</html>

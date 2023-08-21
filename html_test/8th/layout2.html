@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>레이아웃 예제2</title>
+ </head>
+ 
+ <style>
+	.wrap {
+		width:1000px;
+		height:600px;
+ }
+ 	body {
+		text-align:center;
+		font-size:20px;
+		font-family:맑은고딕, 돋움, 굴림;
+		line-height:1.6px; /* 줄간격 */
+ }
+ 	header {
+		width:1000px;
+		height:100px;
+		line-height:100px;
+		border:1px solid #cccccc;
+		background-color:#ff99ff
+ }
+ 	nav {
+		float:left;
+		width:250px;
+		height:400px;
+		line-height:400px;
+		border:1px solid #cccccc;
+		background-color:#ffcc00
+ }
+ 	section {
+		float:left;
+		width:500px;
+		height:400px;
+		line-height:400px;
+		border:1px solid #cccccc;
+		background-color:#ff9900
+ }
+ 	aside {
+		position:relative;
+		left:750px;
+		width:250px;
+		height:400px;
+		line-height:400px;
+		border:1px solid #cccccc;
+		background-color:#99ff00
+
+ }
+ 	footer {
+		width:1000px;
+		height:80px;
+		line-height:80px;
+		border:1px solid #cccccc;
+		background-color:#cc99ff
+ }
+ </style>
+
+ <body>
+ 
+ <div class="wrap">
+	<header>header</header>
+	<nav>nav</nav>
+	<section>section</section>
+	<aside>
+		<div style="position:relative;top:-400px;"> <!-- 글씨가 아래에 위치할 때 위로 올리는 법 -->
+			aside
+		</div>
+	</aside>
+	<footer>footer</footer>
+ </div>
+
+ </body>
+</html>

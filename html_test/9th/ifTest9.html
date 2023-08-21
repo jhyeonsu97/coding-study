@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ /* = (대입연산자) : 오른쪽의 결과 값을 왼쪽에 대입한다. */
+ 
+ // 영어점수를 받아서 수우미양가 출력
+ // prompt("메세지 값", "초기 값");
+ // || : or (또는)
+
+ var eng = prompt("영어점수를 입력하세요.", "0");
+ if ( eng > 100 || eng < 0 ) {
+	document.write("잘못 입력하셨습니다.");
+ } else {
+	 if ( eng >= 90 ) {
+		 document.write("수");
+	 } else if ( eng >= 80 ) {
+		 document.write("우");
+	 } else if ( eng >= 80 ) {
+		 document.write("미");
+	 } else if ( eng >= 70 ) {
+		 document.write("양");
+	 } else {
+		 document.write("가");
+	 }
+ }
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

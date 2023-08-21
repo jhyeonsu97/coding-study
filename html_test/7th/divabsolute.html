@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+<style>
+div.relative{
+position:relative;
+width:400px;
+height:200px;
+border:3px solid #73ad21;
+}
+
+/* absolute : 상위 오브젝트로부터의 절대위치*/
+div.absolute{
+position:absolute;
+top:10px; /*상위개념 대비 위치*/
+left:0px;
+width:200px;
+height:100px;
+border:3px solid #73ad21;
+}
+
+</style>
+
+
+ <body>
+  
+  <h2> position  : absolute; </h2>
+  <p >
+			절대적 위치 : <br>
+  </p>
+
+<div class="relative"> this div delment has position: relative;
+	<div class="absolute"> this div delment has position : absolute; </div>
+	</div>
+</div>
+
+ </body>
+</html>

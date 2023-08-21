@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+<style>
+body{
+	text-align:center;
+	}
+
+header{
+	background:#ffcc00;
+	height:100px;
+	line-height:100px;
+	}
+nav{
+	background:#ff99ff;
+	/*line-height:70px;*/
+	height:70px;
+	/*text-align:center; 적용안됨 table에 입력*/
+	}
+section{
+	
+	background:#00cc00;
+	height:400px;
+	/*line-height:300px;*/
+	}
+footer{
+	background:#0099ff;
+	height:55px;
+	line-height:55px;
+	}
+	</style>
+	
+
+ <body>
+  
+	<header>
+		header 영역
+	</header>
+	<nav>
+		<table border="0" width="300" align="center"  >
+	<tr bgcolor="#abb4c0">
+		<Th height="30"><a href="loginWrite.html">로그인</a></th>
+		<Th><a href="memberAgree.html">회원가입</a></th>
+		<Th><a href="boardList.html">게시판</a></th>
+	</tr>
+
+</table>
+	</nav>
+	<section>
+		<table border="0" width="800" align="center">
+	<TR>
+		<tH>
+		<iframe src="c:/html_test/6th/message_agree.txt" width="700" height="300" frameborder="0">
+		</iframe>
+		</TH>
+	</Tr>
+	<Tr>
+		<th>
+		<input type="checkbox" name="" value="">
+		위 약관에 동의합니다.(필수)
+		</Th>
+	</Tr>
+	<Tr>
+		<th>
+		<input type="button" value="동의합니다." onclick="location='memberWrite.html' ">
+		</Th>
+	</TR>
+	</table>
+	</section>
+	<footer>
+			footer 영역
+	</footer>
+ </body>
+</html>
