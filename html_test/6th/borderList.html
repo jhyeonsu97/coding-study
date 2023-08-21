@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+  <style>
+  body {
+  	font-size:12px;
+	font-family:맑은고딕;
+ }
+ a {
+	text-decoration:none;
+	color:#555555;
+ }
+ </style>
+
+ <body>
+
+ <!-- 탑 메뉴 S --> 
+ <table border="0" width="300">
+ 	<tr bgcolor="#cccccc">
+		<th height="30"><a href="loginWrite.html">로그인</a></th>
+		<th><a href="memberAgree.html">회원가입</a></th>
+		<th><a href="borderList.html">게시판</a></th>
+	</tr>
+ </table>
+
+ <!-- 탑 메뉴 E -->
+ <!-- borderList.html -->
+ <!-- 번호/제목/글쓴이/등록일/조회
+       2 test222 홍길동 2023-04-05 35
+	   1 test111 이울림 2023-04-01 10
+	   -----------------------------
+	                        [ 글쓰기 ]
+ -->
+ <br>
+ 
+ <form name="frm" method="post" action="borderListSave.jsp">
+ <table border="1" width="600">
+	<tr align="center">
+		<th>번호</th>
+		<th>제목</th>
+		<th>글쓴이</th>
+		<th>등록일</th>
+		<th>조회</th>
+	</tr>
+	<tr align="center">
+		<td>2</td>
+		<td>test222</td>
+		<td>홍길동</td>
+		<td>2023-04-05</td>
+		<td>35</td>
+	</tr>
+	<tr align="center">
+		<td>1</td>
+		<td>test111</td>
+		<td>이울림</td>
+		<td>2023-04-01</td>
+		<td>10</td>
+	</tr>
+ </table>
+
+ <table border="0" width="600">
+	<tr>
+	<td align="right">
+	<input type="button" value="글쓰기"
+		   onclick="location='boardWrite.html'"
+	</td>
+	</tr>
+ </table>
+
+  
+ </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>회원가입 폼</title>
+ </head>
+ <style>
+ body {
+ 	font-size:12px;
+	font-family:맑은고딕;
+	}
+	a {
+		text-decoration:none;
+		color:#555555;
+	}
+
+</style>
+
+ <body>
+
+   <!-- 탑 메뉴 S-->
+  
+<table border="0" width="300" >
+	<tr bgcolor="#abb4c0">
+		<Th height="30"><a href="loginWrite.html">로그인</a></th>
+		<Th><a href="memberAgree.html">회원가입</a></th>
+		<Th><a href="boardList.html">게시판</a></th>
+	</tr>
+
+</table>
+<!-- 탑 메뉴 E-->
+<!--memberWite.html-->
+<!---->
+
+<br>
+
+<form name="frm" 
+			method="post" 
+			action="memberWriteSave.jsp" 
+			autocomplete="on">
+<table border="1" width="600">
+	<tr>
+		<th width="25%">아이디</th>
+		<td width="*">
+		<input type="text" 
+					name="Id" 
+					placeholder="아이디를 입력해주세요."
+					autofocus>
+		</td>
+	</tr>
+	<tr>
+		<th>비밀번호</th>
+		<td>
+		<input type="text" 
+					name="Pass" 
+					placeholder="암호를 입력해주세요."
+					autocomplete="off" >
+
+		</td>
+	</tr>
+	<tr>
+		<th>성별</th>
+		<td>
+		<input type="radio" 
+					name="gender" 
+					value="M">남
+		<input type="radio" 
+					name="gender" 
+					value="F" checked>여
+
+		</td>
+	</tr>
+	<tr>
+		<th>이메일</th>
+		<td>
+		<input type="email" 
+					name="email">
+		</td>
+	</tr>
+		<tr>
+		<th>생일</th>
+		<td>
+		<input type="date" 
+					name="birthday">
+		</td>
+	</tr>
+		<tr>
+		<th>핸드폰(-없이 입력)</th>
+		<td>
+		<input type="nuber" 
+					name="cellphone">
+		</td>
+	</tr>
+		<tr>
+		<th>가입경로</th>
+		<td>
+		<select name="abc" size="4" multiple> <!--6강 3.--><!--ctrl+shift눌러야 다중선택-->
+			<option value="인터넷검색">인터넷검색</option>
+			<option value="인터넷검색">친구소개</option>
+			<option value="인터넷검색">전단지</option>
+		</select>		
+		</td>
+	</tr>
+
+	<tr>
+		<th colspan="2">
+		<input type="submit" value="저장">
+		<input type="reset" value="다시쓰기">
+		</th>
+	</tr>
+</table>
+</form>
+
+ </body>
+</html>
+
+
