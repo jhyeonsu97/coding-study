@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ /* 커피머신 */
+
+ // prompt창 : 1. 맥심믹스 2. 카누카푸치노 3. 마일드
+ 			 // 이외의 숫자 입력 시 자동 1번 선택
+ //	prompt창 : 1. 톨 2. 그란데 3. 벤티
+ 			 // 이외의 숫자 입력 시 자동 2번 선택
+ //	prompt창 : 1. 기본 2. 약간 단 맛 3. 아주 단 맛
+ 			 // 이외의 숫자 입력 시 자동 1번 선택
+ 
+
+ // 출력내용 : 카누카푸치노 벤티사이즈로 아주 단 맛을 선택했습니다.
+ 
+ alert("어서오세요. starbucks입니다.");
+
+ var coffee = prompt("1. 맥심믹스 2. 카누카푸치노 3. 마일드",1); 
+
+ if ( coffee < 1 || coffee > 3 ) {
+	 coffee = 1;
+ }
+ var size = prompt("1. 톨 2. 그란데 3. 벤티",2);
+
+ if ( size != 1 && size != 2 && size != 3) {
+	 size = 2;
+ }
+ var sweet = prompt("1. 기본 2. 약간 단 맛 3. 아주 단 맛",1);
+
+ if ( sweet == 1 || sweet ==2 || sweet == 3) {
+ } else {
+	 sweet = 1;
+ }
+
+
+
+ var coffee_value = "";
+
+ if( coffee == 1 ) { coffee_value = "맥심믹스"; }
+ else if ( coffee == 2 ) { coffee_value = "카누카푸치노"; }
+ else { coffee_value = "마일드"; }
+
+ var size_value = "";
+ 
+ if( size == 1 ) { size_value = "톨"; }
+ else if ( size == 2 ) { size_value = "그란데"; }
+ else { size_value = "벤티"; }
+
+ var sweet_value = "";
+
+ if( sweet == 1 ) { sweet_value = "기본"; }
+ else if ( sweet == 2 ) { sweet_value = "약간 단 맛"; }
+ else { sweet_value = "아주 단 맛"; }
+
+ /*
+ document.write( coffee_value );
+ document.write( "  " );
+ document.write( size_value );
+ document.write( "사이즈로  " );
+ document.write( sweet_value );
+ document.write( "을 선택했습니다." );
+ */
+
+ document.write( coffee_value + "  " + size_value + "사이즈로  " + sweet_value + "을 선택했습니다." )
+ 
+
+ </script>
+ 
+ <body>
+  
+ </body>
+</html>

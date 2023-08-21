@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+ 
+ /*
+ var code = prompt("영어점수 입력", 0);
+ switch( code>=60 ) {
+	 case true : alert("합격");
+	 break;
+	 default : alret("불합격");
+ }
+ */
+ 
+ var gender="F";
+ if( gender == "M" ) {
+	 document.write("남성입니다.");
+ } else if ( gender == "F" ) {
+	 document.write("여성입니다.");
+ } else {
+	 document.write("잘못된 값입니다.");
+ }
+ 
+ document.write("<hr>");
+ var code = "b001";
+ var title = "";
+ switch ( code ) {
+ case "b001" : title = "JAVA의 첫거름";
+ break;
+ case "b002" : title = "JSP 시작하기";
+ break;
+ case "b003" : title = "오라클 데이터베이스";
+ break;
+ default title = "없는 코드 번호입니다.";
+ }
+
+ var code = "b001";
+ var title = "";
+ if ( code = "b001" ) {
+	 document.write("JAVA의 첫거름");
+ } else if ( code = "b002" ) {
+	 document.write("JSP 시작하기");
+ } else if ( code = "b003" ) {
+	 document.write("오라클 데이터베이스");
+ } else {
+	 document.write("없는 코드 번호입니다.");
+ }
+ </script>
+
+ <body>
+  
+ </body>
+</html>

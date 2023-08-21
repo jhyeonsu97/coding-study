@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ var hap = 0;
+ var avg = 0;
+ var number = new Array();
+ var len = 7;
+ var zero = 0;
+ 
+ var eng = [90, 50, 0, 78, 0, 70, 64];
+
+ for ( var i=0; i<len; i++) {
+	number[i] = eng[i];
+	if (number[i] != 0) {
+		hap += number[i]
+	} else {
+		zero++;
+	}
+ }
+ 
+ avg = Math.floor( hap/(len-zero) );
+ document.write("총합 : " + hap + "<br>");
+ document.write("평균 : " + avg + "<br>");
+ document.write("1등점수" + top + "<br>");
+
+
+ document.write("<hr>");
+ var hap = 0;
+ var avg = 0;
+ var top = 0; // 내장변수 (사용불가)
+ var top1 = 0; // 1등 값을 세팅할 용도
+ var cnt = 0;
+ var eng = [90, 50, 0, 78, 0, 70, 64];
+
+ for ( var i=0; i<7; i++) {
+	hap += eng[i]
+	if ( eng[i] == 0 ) {
+		cnt++;
+	}
+	if ( top1 , eng[i]) {
+		 top1 = eng[i];
+	}
+ }
+
+ document.write("<hr>");
+ var hap = 0;
+ var avg = 0;
+ var top = 0; // 내장변수 (사용불가)
+ var top1 = 0; // 1등 값을 세팅할 용도
+ var cnt = 0;
+ var eng = [90, 50, 0, 78, 0, 70, 64, 83, 77, 45];
+
+ for ( var i=0; i<eng.length; i++) {
+	hap += eng[i]
+	if ( eng[i] == 0 ) {
+		cnt++;
+	}
+	if ( top1 , eng[i]) {
+		 top1 = eng[i];
+	}
+ }
+ 
+ avg = hap/(eng.length-cnt);
+ document.write("총합 : " + hap + "<br>");
+ document.write("평균 : " + avg + "<br>");
+ document.write("1등점수 : " + top1);
+ 
+ 
+ 
+ document.write("<hr>");
+ var hap = 0;
+ var avg = 0;
+ var number = new Array();
+ var len = 10;
+ var zero = 0;
+
+ for ( var i=0; i<len; i++ ) {
+	 number[i] = i*10;
+	 if ( number[i] != 0 ) {
+	   hap += number[i];
+	 } else {
+		 zero++;
+	 }
+ }
+
+ avg = Math.floor( hap/(len-zero) );
+ document.write(number + "<br>");
+ document.write("합계 : " + hap + "<br>");
+ document.write("평균 : " + avg + "<br>");
+ </script>
+ 
+ <body>
+  
+ </body>
+</html>

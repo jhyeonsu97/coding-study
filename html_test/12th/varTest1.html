@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ var str1 = "javascript";	// 문자타입
+ var str2 = "100";			// 문자타입
+ // var str3 = java;		// error
+ var num1 = 10;				// 숫자타입
+ var boo1 = true;			// boolean 타입 (참/거짓 둘 중 하나로 나뉘는 타입)
+ var score = [98, 70, 56];	// 배열타입 : 하나의 변수명으로 여러 값을 세팅할 때 사용
+ var names = ["홍길동", "카카오", "스크린"];
+
+ document.write( score + "<br>" );
+ document.write( score[0] + "<br>" ); // 98
+ document.write( score[1] + "<br>" ); // 70
+ document.write( score[2] + "<br>" ); // 56
+ document.write( score[3] + "<br>" ); // undefined
+
+ document.write( names + "<br>" ); 
+ document.write( names[0] + "<br>" );
+ document.write( names[1] + "<br>" );
+ document.write( names[2] + "<br>" );
+
+ document.write("<hr>");
+ 
+ var hap = 0;
+ for ( var i=0; i<3; i++) {
+	 hap += score[i];
+	 document.write( score[i] + "<br>");
+ }
+
+ document.write("<hr>");
+ // var hap = score[0] + score[1] + score[2];
+ document.write("합계 : " + hap + "<br>");
+
+ var avg = hap/3;
+ document.write("평균 : " + Math.floor(avg) + "<br>");
+
+ document.write("<hr>");
+ var hap = 0;
+	 hap += score[0];
+	 hap += score[1];
+	 hap += score[2];
+
+ var hap = 0;	// 0
+	 hap += 98;	// 98 
+	 hap += 70;	// 168
+	 hap += 56;	// 224
+
+ var a = 1;		// 1
+	 a += 10;	// 11
+	 a += 5;	// 16
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

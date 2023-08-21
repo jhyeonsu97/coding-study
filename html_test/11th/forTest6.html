@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ 
+ // 배수 : 5의 배수 -> 0, 5, 10, 15, 20, 25 ~ 50
+ // 배수 : 3의 배수 -> 0, 3, 6, 9, ~ , 30, 33 ..
+ // 특정 수치로 나눈 나머지 값이 0이면 배수
+ // % 나누기의 나머지 값
+ 
+ document.write( 0%3 ); // 0
+ document.write( 3%3 ); // 0
+ document.write( 6%3 ); // 0
+ document.write( 7%3 ); // 1
+ 
+ document.write("<hr>");
+ var a = 5;
+ var value = 15
+ var result = value%a; // 0
+
+ if ( result == 0 ) {
+	 document.write("5의 배수");
+ } else {
+	 document.write("5의 배수가 아님");
+ }
+ 
+ document.write("<hr>");
+ var a = 7;
+ var value = 125;
+ // var result = value%a; // 4
+
+ if ( value%a == 0 ) {
+	 document.write("7의 배수");
+ } else {
+	 document.write("7의 배수가 아님");
+ }
+
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

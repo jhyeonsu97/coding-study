@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ alert("어서오세요.");
+
+ var cat_price = 1000;
+ var my_money = prompt("금액을 넣어주세요.",0);
+
+ if ( cat_price > my_money ) {
+	 document.write("은행 잔고가 부족하여 고양이를 사실 수 없습니다.");
+ } else if ( cat_price < my_money) {
+	 document.write("현재 잔고로 고양이를 사실 수 있습니다.");
+ } else if ( cat_price == my_money ) {
+	 document.write("현재 잔고로 고양이를 사실 수 있습니다. <br> 그러나 잔고가 0이 됩니다.");
+ }
+ document.write("<hr>");
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

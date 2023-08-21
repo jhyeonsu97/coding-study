@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+<style>
+
+ul {
+	position:relative;
+	left:0%;
+}
+ul li {
+	margin-top:10px;
+	font-size:12px;
+	color:#ffffff;
+	float:left;             
+	line-height:30px;       
+	text-align:center;
+	width:150px;
+	list-style:none;        
+	border:1px none;
+}
+
+body{
+	text-align:center;
+}
+
+
+header{
+	width:1200px;
+	height:100px;
+	line-height:100px ;
+	border:1px solid;
+}
+
+
+nav{
+	width:1200px;
+	height:50px;
+	line-height:50px ;
+	border:1px solid;
+}
+
+section{
+	position:relative;
+	width:1200px;
+	height:800px;
+	border:1px solid;
+
+}
+
+footer{
+	width:1200px;
+	height:50px;
+	line-height:50px;
+	border:1px solid;
+	background-color:#d9d9d9;
+}
+
+</style>
+
+
+
+ <body></body>
+
+
+  
+  <header>
+		<div style="background-image:url('headerimage.png') ; margin-left:200px;
+		margin-top:15px;width:850px; height:80px; align:center;">
+ </header>
+
+<nav><div style="background-image:url('greenbackground.png') ; width:1200px; height:50px; margin-top:-16px;" >
+	<ul>
+		<li class="menuLink"><a href="#">★전체차량 리스트★</a></li>
+		<li class="menuLink"><a href="#">경,소형차랑</a></li>
+		<li class="menuLink"><a href="#">중형차량</a></li>
+		<li class="menuLink"><a href="#">고급차량</a></li>
+		<li class="menuLink"><a href="#">suv/rv</a></li>
+		<li class="menuLink"><a href="#">승합차량</a></li>
+		<li class="menuLink"><a href="#">외제차량</a></li>
+	</ul>
+	</div>
+</nav>
+
+<section> 
+
+<div style="margin-top:30px;">
+<table width="80%" height="600" border="0" align="center">
+<tr>
+<td>
+<table border="0">
+	<tr >
+		<Td><font size="5"><b>회원가입</b></td>
+	</tr>
+</table>
+
+<div style="margin-top:10px;">
+<table border="0">
+	<tr >
+		<Td>사이트 이용정보 입력</td>
+	</tr>
+</table>
+</div>
+
+<table border="0"  width="100%"  bgcolor="#ffffff" >
+	<tr align="left" >
+		<td rowspan="2" width="150" bgcolor="#e4e4e4">아이디</td>
+		<td>영문자, 숫자,_만 입력 가능, 최소 3자 이상 입력하세요.</td>
+	</tr>
+	<tr align="left">
+		<Td><input type="text" ></td>
+	</tr>
+		<tr align="left">
+		<td bgcolor="#e4e4e4">비밀번호</td>
+		<td><input type="password" ></td>
+	</tr>
+		<tr align="left">
+		<td bgcolor="#e4e4e4">비밀번호 확인</td>
+		<td><input type="password" ></td>
+	</tr>
+</table>
+
+<div style="margin-top:20px;">
+<table border="0" >
+	<tr >
+		<Td>개인정보 입력</td>
+	</tr>
+</table>
+	<table border="0"  width="100%" >
+	<tr align="left">
+		<td width="150" bgcolor="#e4e4e4">이름</td>
+		<td><input type="text" ></td>
+	</tr>
+		<tr align="left">
+			<td rowspan="2" bgcolor="#e4e4e4">닉네임</td>
+			<td>공백없이 한글, 영문, 숫자만 입력 가능 (한글 2자, 영문4자 이상)
+				닉네임을 바꾸시면 앞으로 60일 이내에는 변경 할 수 없습니다.</td>
+		</tr>
+		<tr align="left">
+			<td><input type="text" ></td>
+		</tr>
+		<tr align="left">
+		<td bgcolor="#e4e4e4">E-mail</td>
+		<td><input type="email" ></td>
+	</tr>
+	<tr align="left">
+		<td bgcolor="#e4e4e4">전화번호></td><td><input type="text" ></td>
+	</tr>
+	<tr align="left">
+		<td bgcolor="#e4e4e4">휴대폰번호</td><td><input type="text" ></td>
+	</tr>
+</table>
+</div>
+
+<div style="margin-top:20px;">
+<table border="0" >
+	<tr >
+		<Td>기타 개인설정</td>
+	</tr>
+</table>
+<table border="0"  width="100%">
+	<tr align="left">
+		<td width="150" bgcolor="#e4e4e4">메일링서비스</td>
+		<td><input type="checkbox" name="" value="">정보 메일을 받겠습니다.</td>
+	</tr>
+	<tr align="left">
+		<td bgcolor="#e4e4e4">SNS 수신여부</td>
+		<td><input type="checkbox" name="" value="">휴대폰 문자메세지를 받겠습니다.</td>
+	</tr>
+	<tr align="left">
+		<td rowspan="2" bgcolor="#e4e4e4">정보공개</td>
+		<td>정보공개를 바꾸시면 앞으로 0일 이내에는 변경이 안됩니다.</td>
+	</tr>
+	<tr align="left">
+		<td>
+		<input type="checkbox" name="" value="">다른분들이 나의 정보를 볼 수 있도록 합니다.
+		</td>
+	</tr>
+	<tr align="left">
+		<td rowspan="2" bgcolor="#e4e4e4">자동등록방지</td>
+		<td><img src="secret.png" width="100" height="60"> <textarea name="secret" cols="10" rows="3"></textarea></td>
+	</tr>
+	<tr align="left">
+		<Td>자동등록방지 숫자를 순서대로 입력하세요.</td>
+	</table>
+
+  <div style="margin-top:20px;">
+	<table border="0" align="center">
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th colspan="2">
+			<input type="submit" value="회원가입">
+			<input type="reset" value="취소">
+		</th>
+	</tr>
+	
+</table>
+</div>
+
+</table>
+</section>
+
+<footer>
+	<div style=" text-align:center; width:1200px; height:50px;margin-top:-16px;margin-left:250px;" >
+	<ul >
+		<li class="menuLink"><a href="#">회사소개</a></li>
+		<li class="menuLink"><a href="#">전자상거래표준약관</a></li>
+		<li class="menuLink"><a href="#">중형차량개인정보 취급방침</a></li>
+		<li class="menuLink"><a href="#">국재여행표준약관</a></li>
+	</ul>
+	</div>
+</footer>
+
+ </body>
+</html>
+

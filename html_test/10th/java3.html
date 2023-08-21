@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+
+/*var cat_price = 1000;
+var my_money = 500;
+
+if (cat_price > my_money){
+	document.write("은행 잔고가 부족해 고양이 못삽니다.");
+} else if ( cat_price< my_money){
+	document.write("현재 잔고로 고양이를 사실 수 있습니다.");
+} else if (cat_price == my_money ){
+	document.write ("현재 잔고로 고양이 사실수 있지만 잔고가 0이 됩니다.");
+}
+document.write("<hr>");*/
+
+var coffee = prompt("커피종류입력 1. 맥심믹스 2. 카누카푸치노 3. 마일드",1);
+if(coffee < 1 || coffee>3) {
+	coffee=1;
+}
+
+var size = prompt("커피사이즈 입력 1. 벤티 2. 그란데 3. 톨",2);
+if (size !=1 && size!=2 && size !=3){
+	size=1;
+}
+var sweet = prompt("커피당도 입력1. 기본단맛 2. 약간단맛 3.아주단맛 ",1);
+if(sweet==1 || sweet ==2 || sweet==3 ) {
+} else {
+	 sweet=1;
+}
+
+var coffee_value = ""; //일단 변수 생성 공백으로
+if (coffee ==1){coffee_value = "맥심믹스";}
+else if (coffee == 2){coffee_value = "카누카푸치노" ;}
+else {coffe_value="마일드";}
+
+var size_value = "";
+if (size ==1){size_value = "벤티";}
+else if (size == 2){size_value = "그란데"; }
+else {size_value="톨";}
+
+var sweet_value = "";
+if (sweet ==1){sweet_value = "기본단맛";}
+else if (sweet == 2){sweet_value = "약간단맛"; }
+else {sweet_value="아주단맛";}
+
+
+/*document.write (coffee_value);
+document.write ("		");
+document.write (size_value);
+document.write ("사이즈로");
+document.write (sweet_value);
+document.write ("을 선택했습니다");*/
+
+document.write (coffee_value + "	"
+							+ size_value + "사이즈로"
+							+sweet_value+"을 선택했습니당")
+
+
+ </script>
+
+
+ <body>
+  
+ </body>
+</html>

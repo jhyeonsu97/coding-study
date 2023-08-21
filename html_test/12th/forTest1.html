@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ 
+ /* 크기 비교 기호 */
+ // < : gt, <= : ge, > : lt, >= : le
+
+ // i < 100 -> i 보다 크다.			gt
+ // i <= 100 -> i 보다 크거나 같다.		ge
+ // i > 100 -> i 보다 작다.			lt
+ // i >= 100 -> i 보다 작거나 같다.		le
+
+ var a = 1;
+ a++;
+ a+=1;
+ a=a+1; // a+1
+ 
+ // 2증가
+ a+=2;
+ a=a+2;
+ 
+ // for(초기값; 비교조건; 증감조건)
+ for ( var i=1; i<=10; i+=3) {
+	 document.write(i + " "); // 1 4 7 10
+ }
+ 
+ document.write("<hr>");
+ // -5 ~ 4
+ for ( var i=-5; i<5; i++) {	// < : gt, <= : ge
+ // = for ( var i=-5; i<=4; i++) {
+	 document.write(i + " ");
+ }
+
+ document.write("<hr>");
+ // 4 3 2 1 0 -1 -2 -3 -4
+ for ( var i=4; i>=-5; i--) {	// > : lt, >= : le
+	 document.write(i + " ");
+ }
+
+ document.write("<hr>");
+ // 출력 : 1 ~ 10, 제외(3, 7)
+ for ( var i=1; i<11; i++) {
+	 if ( i!=3 && i!=7 ) {
+		 document.write(i + " ");
+	}
+ }
+
+ document.write("<hr>");
+ // 1 ~ 100
+ // 3의 배수 출력
+ for ( var i=1; i<=100; i++ ) {
+	 if ( i%3==0 ) {
+		 document.write(i + " ");
+	 }
+ }
+ 
+ document.write("<hr>");
+ for ( var i=1; i<=100; i++ ) {
+	 var result = i%3;
+	 if ( result==0 ) {
+		 document.write(i + " ");
+	 }
+ }
+ 
+ document.write("<hr>");
+ for ( var i=3; i<=100; i+=3 ) {
+	 document.write(i + " ")
+ }
+ 
+ document.write("<hr>");
+ // 2단 출력 : 2 x 1 = 2
+ for ( var i=1; i<=9; i++) {
+	 document.write("2" + "x" + i + "=" + 2*i + "<br>");
+ }
+ 
+ document.write("<hr>");
+ // document.write( "2 x 1 = 2" );
+
+ /*
+ var dan = 2;
+ document.write( dan + " x 1 = " + (dan*1) + "<br>" );
+ document.write( dan + " x 2 = " + (dan*1) + "<br>" );
+ document.write( dan + " x 3 = " + (dan*1) + "<br>" );
+ */
+
+ var dan = 2; // 1 ~ 9
+ for ( var i=1; i<=9; i++) {
+	document.write( dan + "x" + i  + "=" + (dan*i) + "<br>" );
+ }
+ 
+ </script>
+
+ <body>
+  
+ </body>
+</html>

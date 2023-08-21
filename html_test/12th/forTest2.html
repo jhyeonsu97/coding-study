@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ 
+ <script>
+ // 2중 for문
+ for ( var a=2; a<=9; a++) {
+
+	 var dan = a; 
+	 for ( var i=1; i<=9; i++) {
+		document.write( dan + "x" + i  + "=" + (dan*i) + "&nbsp;&nbsp;" );
+	}
+	document.write("<hr>");
+ }
+ 
+ for ( var i=1; i<11; i++) {
+	 document.write("<input type='button' value='전송"+i+"'> ");
+	 	 if ( i==5 ) {
+		document.write("<br>");
+	}
+ }
+ 
+ document.write("<hr>");
+ // width : 30, 40, 50 ~~~ 150
+ 
+ for ( var i=30; i<=150; i+=10 ) {	
+
+	 document.write( "<div style='background:#cc99ff;width:" + i + "px;height:30px;'></div>" );
+	 document.write("<br>");
+ }
+
+ document.write("<hr>");
+ for ( var i=30; i<=150; i+=10 ) {	
+
+	 var color = "cc00ee";
+	 if (i==40) color = "ff0000";
+	 else if (i==50) color = "0066cc";
+	 else if (i==60) color = "006600";
+
+	 document.write( "<div style=\"background:#"+color+";width:" + i + "px;height:30px;\"></div>" );
+	 document.write("<br>");
+ }
+
+ document.write("<hr>");
+ for ( var i=10; i<=40; i+=10 ) {	
+
+	 // 배열
+	 var color = ["cc00ee", "ff0000", "0066cc", "006600"];
+	 var b = (i/10)-1;
+
+	 document.write( "<div style=\"background:#"+color[b]+";width:" + i + "px;height:30px;\"></div>" );
+	 document.write("<br>");
+ }
+
+ </script>
+
+ <body>
+
+ <hr>
+ <div style="background:skyblue;width:30px;height:30px;"></div>
+  
+ </body>
+</html>

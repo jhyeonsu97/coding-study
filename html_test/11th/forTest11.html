@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+
+ <script>
+ 
+ for (var i=1; i<=14; i++) {
+	 if ( i<10 ) {
+		 document.write("0");
+	 }
+		 document.write(i + "일 ");
+	if ( i%7 == 0 ) {
+		 document.write("<br>");
+	}
+ }
+ 
+ document.write("<hr>");
+ for (var i=1; i<=31; i++) {
+	 if ( i<10 ) {
+		document.write("0");
+	 }
+		document.write(i + "일 ")
+	 if ( i%7 == 0 ) {
+		document.write("<br>");
+	}
+ }
+ 
+ document.write("<hr>");
+ for (var i=1; i<=31; i++) {
+	 if ( i<10 ) {
+		document.write("<font color='#ffffff'>0</font>");
+	 }
+		document.write(i + "일 ")
+	 if ( i%7 == 0 ) {
+		document.write("<br>");
+	}
+ }
+
+ document.write("<hr>");
+ for (var i=1; i<=31; i++) {
+	 if ( i<10 ) {
+		 document.write("&nbsp;");
+	 }
+	 document.write(i + "일 ")
+	 if ( i%7 == 0 ) {
+	 document.write("<br>");
+	}
+ }
+
+ document.write("<hr>");
+ var a = 2;
+ for (var i=1; i<10; i++) {
+	 document.write(a);
+	 if ( i<10 ) {
+		 document.write( "x" + i + "=" + a*i );
+	 } 
+	 document.write("<br>")
+ }
+
+ </script>
+  
+ </body>
+</html>

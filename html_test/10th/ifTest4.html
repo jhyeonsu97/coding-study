@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ /* 커피머신 */
+
+ // prompt창 : 1. 맥심믹스 2. 카누카푸치노 3. 마일드
+ 			 // 이외의 숫자 입력 시 자동 1번 선택
+ //	prompt창 : 1. 톨 2. 그란데 3. 벤티
+ 			 // 이외의 숫자 입력 시 자동 2번 선택
+ //	prompt창 : 1. 기본 2. 약간 단 맛 3. 아주 단 맛
+ 			 // 이외의 숫자 입력 시 자동 1번 선택
+ 
+
+ // 출력내용 : 카누카푸치노 벤티사이즈로 아주 단 맛을 선택했습니다.
+ 
+ alert("어서오세요. starbucks입니다.");
+
+ var coffee = prompt("1. 맥심믹스 2. 카누카푸치노 3. 마일드"); 
+
+ if ( coffee == 1 || coffee > 3 ) {
+	 document.write("맥심믹스를 선택하셨습니다.");
+ } else if ( coffee == 2 ) {
+	 document.write("카누카푸치노를 선택하셨습니다.");
+ } else if ( coffee == 3 ) {
+	 document.write("마일드를 선택하셨습니다.");
+ }
+ document.writre("<hr>");
+
+ var size = prompt("1. 톨 2. 그란데 3. 벤티");
+
+ if ( size == 1 ) {
+	 document.write("톨 사이즈를 선택하셨습니다.");
+ } else if ( size == 2 || size > 3 ) {
+	 document.write("그란데 사이즈를 선택하셨습니다.");
+ } else if ( size == 3 ) {
+	 document.write("벤티 사이즈를 선택하셨습니다.");
+ }
+ document.wirte("<hr>");
+
+ var sweet = prompt("1. 기본 2. 약간 단 맛 3. 아주 단 맛");
+
+ if ( sweet == 1 || sweet > 3) {
+	 document.write("기본 맛을 선택하셨습니다.");
+ } else if ( sweet == 2 ) {
+	 document.write("약간 단 맛을 선택하셨습니다.");
+ } else if ( sweet == 3 ) {
+	 document.write("아주 단 맛을 선택하셨습니다.");
+ }
+ document.write("<hr>");
+
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

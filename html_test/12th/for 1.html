@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+for (i=3; i<=100 ; i++){
+	if (i%3==0)	{
+		document.write(i+"	");
+	}
+}
+document.write("<hr>");
+
+for (var i=3; i<=100 ; i++){
+	var result = i%3;
+	if (result==0)	{
+		document.write(i+"	");
+	}
+}
+document.write("<hr>");
+
+for (var i=3; i<=100 ; i+=3){
+		document.write(i+"	");
+}
+document.write("<hr>"); //99까지 출력
+
+   for (  i=1; i<11; i++)  {
+	  document.write(" <input type='button' value='전송"+i+"'>");
+	  if (i==5) {
+		  document.write("<br>");
+	  }
+	}
+document.write("<hr>");
+
+
+//width : 30 > 10씩 증가~150까지 
+
+for ( var i=30; i<=150; i+=10 ){ 
+		
+		var color = "ffccff";
+		if (i==40) color = "ff0000";
+		else if (i==50) color = "0066cc";
+		else if (i==60) color = "66ff00";
+	
+	document.write(" <div style='background:#"+color+"; width:"+i+"px; height:30px;'></div>");
+	document.write("<br>");
+}
+document.write("<hr>");
+
+// 배열 
+for ( var i=10; i<=100; i+=10 ){ 
+		
+		var color = ["ffccff","ff0000","0066cc", "66ff00"];
+		var b = (i/10)-1;
+	document.write(" <div style='background:#"+color[b]+"; width:"+i+"px; height:30px;'></div>");
+	document.write("<br>");
+}
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

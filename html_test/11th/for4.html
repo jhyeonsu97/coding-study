@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+  // 5의 배수 -> 0, 5, 10 ,15, 20, 
+  // 3의 배수 -> 0, 3, 6, 9, 12, 15
+  // 측정 수치로 나눈 나머지 값이 0이면 배수
+  
+  document.write(0%3); // 0
+  document.write(3%3); // 0
+  document.write(6%3); // 0
+  document.write(7%3); // 1
+
+  document.write("<hr>");
+
+var a = 7 ; 
+var value = 18;
+var result = value%a; // 4
+
+ if (result ==0 )  {
+	 document.write("7의 배수");
+  } else {
+	  document.write("7의 배수가 아님");
+}
+  document.write("<hr>");
+
+// 1~100까지 홀수 출력
+for (var i=1; i<=100; i++){
+	if (i%2==1){
+	document.write(i+"	");
+	}
+}
+  document.write("<hr>");
+
+// 1~100까지 3의 배수 출력
+for (var i=1; i<=100 ; i++){
+	if (i%3==0){
+	document.write(i+" ");
+	}	
+}
+document.write("<hr>");
+
+for (i=1; i<=12; i++){
+	document.write("*");
+	 if (i%4==0)	{
+	document.write("<br>");
+	}
+}
+
+document.write("<hr>");
+
+for (i=1; i<=9 ; i++){
+	document.write("*");
+	if (i%3==0) {
+		document.write("<br>");
+	}
+}
+document.write("<hr>");
+
+for (i=1;i<=10 ;i++ ){
+	document.write("2 X "+i+"="+2*i+"<br>");
+}
+document.write("<hr>");
+
+var dan = 2; // 1~9
+for (var i=1; i<=9; i++ ){
+	document.write(dan+" X "+i+ "= "+ (dan*i)+"<br>");
+}
+document.write("<hr>");
+
+for (var a=2; a<=9; a++){ //2중 for문
+
+	var dan  = a; 
+for (var i=1; i<=9; i++ ){
+	document.write(dan+" X "+i+ "= "+ (dan*i)+"<br>");
+}
+}
+
+ 
+  </script>
+ </head>
+ <body>
+  
+ </body>
+</html>
