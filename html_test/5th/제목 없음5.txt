@@ -1,0 +1,12 @@
+<?
+
+echo $_get['title'];
+echo "<br>";
+echo  $_get['pass'];
+echo "<br>";
+echo  $_post['name'];
+echo "<br>";
+echo  $_post['content'];
+
+
+?>

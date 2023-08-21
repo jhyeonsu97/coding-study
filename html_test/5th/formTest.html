@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title> formTest </title>
+ </head>
+ <body>
+ <!-- boardWrite.html -->
+ <!-- boardWriteSave.php -->
+
+ <!-- POST : 데이터(data)를 별도로 첨부하여 전달하는 방식
+			 데이터가 외부에 드러나지 않음
+			 전송할 수 있는 데이터의 크기 또한 제한이 없음
+			 보안성 및 활용성이 GET 방식보다 좋음 
+	  GET : 주소에 데이터(data)를 추가하여 전달하는 방식
+			데이터가 주소 입력창에 그대로 나타남
+			전송할 수 있는 크기 또한 제한적임
+			따라서 검색 엔진의 쿼리(query)와 같이 크기가 작고 중요도가 낮은 정보를 보낼 때 주로 사용
+ -->	
+
+ <p>
+ <b>1. 회원가입 폼 만들기 - 테이블 구성</b>
+ </p>
+
+ <form name="form" method="post" action="save.jsp"> 
+
+ <table border="0" width="600" height="280" cellpadding="5" cellspacing="1" bgcolor="#cccccc">
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center">아이디</th>
+		<td>
+			<input type="text" name="userid" size="20" style="width:100px;">
+			<input type="button" value="아이디찾기">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center">패스워드</th>
+		<td>
+			<input type="password" name="password" size="20" style="width:100px;">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center" name="name">이름</th>
+		<td>
+			<input type="text">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center" name="gender">성별</th>
+		<td>
+			<input type="radio" name="man" value="남"> 남,
+			<input type="radio" name="woman" value="여"> 여
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center" name="birth">생일</th>
+		<td>
+			<select name="year">
+				<option value="1998년">1998년</option>
+				<option value="1999년">1999년</option>
+				<option value="2000년">2000년</option>
+			</select>
+			<select name="month">
+				<option value="4월">4월</option>
+				<option value="5월">5월</option>
+				<option value="6월">6월</option>
+			</select>
+			<select name="day">
+				<option value="25일">25일</option>
+				<option value="26일">26일</option>
+				<option value="27일">27일</option>
+			</select>
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<th width="100" align="center" name="adress">주소</th>
+		<td>
+			<input type="text">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff" align="center">
+		<td colspan="2">
+			<input type="submit" value="저장">
+			<input type="reset" value="재설정">
+		</td>
+	</tr>
+ </table>
+ </form> 
+ 
+ <p>
+ <b>2. 게시판 입력 폼 - 테이블 구성</b>
+ </p>
+
+ <form name="form" method="post" action="save.jsp">
+
+ <table border="0" width="600" height="250" cellpadding="5" cellspacing="1" bgcolor="#cccccc">
+	<tr align="center" bgcolor="#ffffff">
+		<th width="30%">제목</th>
+		<td width="*"> <!-- * : 나머지 부분 -->
+			<input type="text" name="title">
+		</td>
+	</tr>
+	<tr align="center" bgcolor="#ffffff">
+		<th>암호</th>
+		<td>
+			<input type="text" name="password">
+		</td>
+	</tr>
+	<tr align="center" bgcolor="#ffffff">
+		<th>글쓴이</th>
+		<td>
+			<input type="text" name="writer">
+		</td>
+	</tr>
+	<tr align="center" bgcolor="#ffffff">
+		<th>내용</th>
+		<td>
+			<textarea name="content" cols="50" rows="5"></textarea>
+		</td>
+	</tr>
+	<tr align="center" bgcolor="#ffffff">
+		<td width="150" colspan="2">
+			<input type="submit" value="저장">
+			<input type="reset" value="취소">
+		</td>
+	</tr>
+ </table>
+ </form>
+
+ <p>
+ <b>3. 로그인 화면 만들기</b>
+ </p>
+
+ <form name="form" method="post" action="save.jsp">
+
+ <table border="0" width="300" height="50" cellpadding="5" cellspacing="1" bgcolor="#cccccc">
+	<tr bgcolor="#ffffff" width="40%">
+		<th align="center" name="userid">아이디</th>
+		<td>
+			<input type="text">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff" width="70">
+		<th align="center" name="password">암호</th>
+		<td>
+			<input type="text">
+		</td>
+	</tr>
+	<tr bgcolor="#ffffff">
+		<td colspan="2" align="center">
+			<input type="submit" value="로그인">
+		</td>
+	</tr>
+
+ </table>
+ </form>
+
+ </body>
+</html>

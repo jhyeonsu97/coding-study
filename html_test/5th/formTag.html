@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+
+ <h4>1. form 태그</h4>
+
+ <!-- name : 폼 이름 / method : 전송방식(post, get) / action : 전송위치(웹주소 작성) -->
+ <form name="form" method="post" action="save.jsp">
+ <br>
+
+ <h4>2. input 태그</h4>
+
+ <!-- 한줄 입력 상자 / name, value : 모양 형성과는 상관 X / value : 초기값 -->
+ 아이디 : <input type="text" name="이름" value="아이디를 입력하세요">
+ <br>
+ <!-- 암호 입력 상자 -->
+ 패스워드 : <input type="password" name="이름" value="1234">
+ <br>
+ <!-- 라디오 상자 -->
+ <!-- radio : 단일선택 -->
+ 성별 <input type="radio" name="gender" value="남"> 남
+ 	 <input type="radio" name="gender" value="여"> 여
+ <br>
+ 학년 <input type="radio" name="grade" value="1학년"> 1학년
+ 	 <input type="radio" name="grade" value="2학년"> 2학년
+	 <input type="radio" name="grade" value="3학년"> 3학년
+ <br>
+ <!-- checkbox : 다중선택 -->
+ 취미 :	축구 <input type="checkbox" name="hobby" value="축구">
+		야구 <input type="checkbox" name="hobby" value="야구">
+		농구 <input type="checkbox" name="hobby" value="농구">
+ <br>
+ 파일선택 <input type="file" name="myfile">
+
+ <br>
+ <!-- 숨김 상자 -->
+ 숨김 <input type="hidden" name="이름" value="값">
+
+ <h4>3. select 태그</h4>
+ <!-- 펼침목록 태그 -->
+ <!-- value : 전송값 / text : 출력값 -->
+ 생일 : <select name="year">
+ 			<option value="1998">1998년</option>
+			<option value="1999">1999년</option>
+			<option value="2000">2000년</option>
+		</select>
+		<select name="month">
+			<option value="3">3월</option>
+			<option value="4">4월</option>
+			<option value="5">5월</option>
+		</select>
+		<select name="day">
+			<option value="27">27일</option>
+			<option value="28">28일</option>
+			<option value="29">29일</option>
+		</select>
+
+ <br>
+ <!-- html에서 cols : 넓이 / rows : 높이 -->
+ 내용 <textarea name="content" cols="50" rows="10">내용 입력하는 곳</textarea>
+
+ <br>
+ <!-- 버튼 -->
+ <!-- submit : 전송 / reset : 화면 새로고침 / button : 기능 없음 -->
+ <input type="submit" value="저장">
+ <input type="reset" value="새로고침">
+ <input type="button" value="아이디찾기">
+ <br>
+ </form>
+ 
+ <?
+
+<!-- echo : 출력 -->
+echo $title;
+echo "<br>";
+echo $password;
+echo "<br>";
+echo $name;
+echo "<br>;
+echo $content;
+
+
+?>
+
+<?
+
+<!-- echo : 출력 -->
+echo $_POST[title;]
+echo "<br>";
+echo $_POST[password;]
+echo "<br>";
+echo $_POST[name;]
+echo "<br>;
+echo $_POST[content;]
+
+echo $_GET['title'];
+echo "<br>";
+echo $_GET['password'];
+echo "<br>";
+echo $_POST['name'];
+echo "<br>;
+echo $_POST['content'];
+
+
+
+?>
+
+ </body>
+</html>

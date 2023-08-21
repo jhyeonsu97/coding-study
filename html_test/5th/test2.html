@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <body>
+
+ <!--boardwite.html-->
+<!--boardwitesave.php-->
+
+<!--post/get-->
+
+<form name="form" method="post" action="save.jsp"> 
+
+<table border="0" cellpadding="0" cellspacing="1" width="500" height="250" bgcolor="#98a3b1">
+
+	 <tr bgcolor="white">
+ 		<th>아이디</th>
+		<td>&nbsp;<input type="text" name="userid" style="width:100px;">
+				&nbsp;<input type="button" value="아이디찾기"></td>
+	</tr>
+
+	<tr bgcolor="white">
+		<th>패스워드</th>
+		<td>&nbsp;<input type="password" name="userpassword"style="width:100px;"></td>
+	</tr>
+
+	<tr bgcolor="white">
+		<th>이름</th>
+		<td>&nbsp;<input type="text" name="name">
+	</tr>
+
+	<tr bgcolor="white">
+		<td align="center"><b>성별</b></td>
+		<td>&nbsp;남<input type="radio" name="성별" value="M" >
+		여<input type="radio" name="성별" value="F"></td>
+	</tr>
+
+		<tr bgcolor="white">
+			<td align="center"><b>생일</b></td>
+				<td>&nbsp;<select name="year" >
+			<option value="2000">2000년</option>
+			<option value="2001">2001년</option>
+			<option value="2002">2002년</option>
+		</select>
+	<select name="month">
+			<option value="1">1월</option>
+			<option value="2">2월</option>
+			<option value="2">3월</option>
+	</select>
+	<select name="day">
+			<option value="1">1일</option>
+			<option value="2">2일</option>
+			<option value="2">3일</option>
+	</td>
+	</select>
+	</tr>
+
+	<tr bgcolor="white">
+		<th align="center">주소</th>
+		<td>&nbsp;<input type="text" name="adress">
+	</tr>
+
+	<tr bgcolor="white">
+	<td colspan="2" align="center"><input type="submit" value="저장">&nbsp;<input type="reset" value="재설정">
+
+</table>
+
+</form>
+
+
+ </body>
+</html>
+
+
