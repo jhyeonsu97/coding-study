@@ -1,0 +1,60 @@
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+
+.header {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; 
+	-webkit-box-sizing:border-box; /* 1 */
+    border-bottom: 1px solid #000; /* 2 */
+    padding: 10px;
+    height: 45px;
+    position: relative;
+/*    background: url(../img/toolbar.png) #000000 repeat-x;*/    
+    
+	background-image: linear-gradient(bottom, rgb(134,184,219) 17%, rgb(35,148,148) 80%);
+	background-image: -o-linear-gradient(bottom, rgb(134,184,219) 17%, rgb(35,148,148) 80%);
+	background-image: -moz-linear-gradient(bottom, rgb(134,184,219) 17%, rgb(35,148,148) 80%);
+	background-image: -webkit-linear-gradient(bottom, rgb(134,184,219) 17%,  rgb(35,148,148) 80%);
+	background-image: -ms-linear-gradient(bottom, rgb(134,184,219) 17%, rgb(35,148,148) 80%);
+
+	background-image: -webkit-gradient(
+	linear,
+	left bottom,
+	left top,
+	color-stop(0.17, rgb(134,184,219)),
+	color-stop(0.8, rgb(35,148,148)));    	
+}
+
+.header>.title{
+	position: absolute;
+	overflow: hidden;
+	left: 50%;
+	top: 10px;
+	line-height: 1em;
+	margin: 1px 0 0 -75px;
+	height: 40px;
+	font-size: 20px;
+	width: 150px;
+	font-weight: bold;
+	text-shadow: rgba(0,0,0,1) 0 -1px 1px;
+	text-align: center;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	color: #fff;	
+}
+
+#box{
+	width: 200px;
+	height: 200px;
+	box-shadow: rbga(0,0,0,1) 5px 5px 10px;
+}
+
+
