@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="LibrarySpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="boardVO"   type="egov.mywork1.service.BoardVO"/>
+	<typeAlias  alias="noticeVO"  type="egov.mywork1.service.NoticeVO"/>
+	<typeAlias  alias="libraryVO" type="egov.mywork1.service.LibraryVO"/>
+	
+	<insert id="libraryDAO.insertBook">
+		INSERT INTO BOOK( UNQ
+					       ,THUMBNAIL   
+					       ,TITLE   
+					       ,AUTHORS
+					       ,PUBLISHER
+					       ,ISBN
+					       ,CONTENTS
+					       ,DATETIME) 
+		           VALUES( BOOK_SEQ.NEXTVAL 
+						  ,'$thumbnail$'
+						  ,'$title$'
+						  ,'$authors$'
+						  ,'$publisher$'
+						  ,'$isbn$'
+						  ,'$contents$'
+						  ,TO_DATE('$datetime$', 'YYYY-MM-DD'))
+	</insert>
+	
+	 <select id="libraryDAO.selectBookList" resultClass="egovMap">
+    
+     SELECT b2.* FROM (
+	     SELECT rownum rn, a2.* FROM ( 
+				SELECT b.* from  (
+					SELECT  a.*  from (
+				        SELECT  unq
+				        		,thumbnail 
+				        		,title
+				        		,authors 
+				        		,publisher  
+				        		,isbn  
+				         FROM  book 
+				      	 ORDER BY unq DESC ) a ) b 
+
+				  WHERE  1=1
+				  
+				  <isNotNull property="searchCondition">
+				  	<isNotEmpty property="searchCondition">
+				    	AND $searchCondition$ LIKE '%$searchKeyword$%'
+			      	</isNotEmpty>
+			      </isNotNull>
+				 
+				  ) a2 ) b2
+				  
+	WHERE 	
+		  rn  BETWEEN  $firstIndex$  AND  $lastIndex$ 
+   </select>
+   
+   
+	
+	<select id="libraryDAO.selectBookTotal" resultClass="int">
+		SELECT COUNT(*) FROM book 
+			WHERE  1 = 1
+				  <isNotNull property="searchCondition">
+				  	<isNotEmpty property="searchCondition">
+				    	  AND  $searchCondition$ LIKE '%$searchKeyword$%'
+			      	</isNotEmpty>
+			      </isNotNull>
+	</select>
+	
+</sqlMap>
+
+
+
+
+
+
+

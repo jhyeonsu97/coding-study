@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="AdminSpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="noticeVO"  type="egov.mywork1.service.NoticeVO"/>
+	<typeAlias  alias="memberVO"  type="egov.mywork1.service.MemberVO"/>
+	
+	<insert id="adminDAO.insertNotice">
+		INSERT INTO NOTICEBOARD( UNQ
+					       ,TITLE      
+					       ,PASS   
+					       ,NAME   
+					       ,CONTENT
+					       ,RDATE
+					       ,EMPS) 
+		           VALUES( NOTICEBOARD_SEQ.NEXTVAL 
+						  ,#title#
+						  ,#pass#
+						  ,#name#
+						  ,#content#
+						  ,SYSDATE
+						  ,#emps# )			  
+	</insert>
+	
+	<insert id="adminDAO.insertMenu">
+	INSERT INTO menu(no,menuname,code,useyn) values( 
+				 (select nvl(max(no),0)+1 FROM menu)        
+				, '$menuname$' 
+				, menu_seq.nextval
+				, '$useyn$' )
+	</insert>
+	
+	<select id="adminDAO.selectNoticeList" resultClass="egovMap">
+	
+	SELECT b2.* FROM (
+	     SELECT rownum rn, a2.* FROM ( 
+				SELECT c.* from  (
+					SELECT  a.*  from (
+				        SELECT  unq
+				        		,title
+				        		,name
+				        		,hits
+				        		,to_char(rdate,'yyyy-mm-dd') rdate
+				                ,emps 
+				         FROM  noticeboard 
+				         WHERE emps='Y' 
+						       ORDER BY unq DESC ) a
+				    
+				    UNION ALL 
+				    
+				    SELECT  b.*  from (
+				        SELECT  unq
+				        		,title
+				        		,name
+				        		,hits
+				        		,to_char(rdate,'yyyy-mm-dd') rdate
+				                ,emps  
+				           FROM noticeboard 
+				          WHERE emps='N'
+				      			ORDER BY unq DESC ) b
+				 	) c  
+
+				  WHERE  1=1
+				  
+				  <isNotNull property="searchCondition">
+				  	<isNotEmpty property="searchCondition">
+				    	AND $searchCondition$ LIKE '%$searchKeyword$%'
+			      	</isNotEmpty>
+			      </isNotNull>
+				 
+				  ) a2 ) b2
+				  
+	WHERE 	
+		  rn  BETWEEN  $firstIndex$  AND  $lastIndex$ 
+	</select>
+	
+	<select id="adminDAO.selectMenuList" resultClass="egovMap">
+	
+		SELECT 	 no
+				,menuname
+				,useyn
+		 FROM 	menu ORDER BY no
+	
+	</select>
+	
+	<select id="adminDAO.selectMemberList" resultClass="egovMap">
+	
+			SELECT b.* FROM (
+	     		SELECT rownum rn, a.* FROM ( 
+				        SELECT   userid
+				        		,name
+				        		,nickname
+				        		,mobile
+				        		,to_char(rdate,'yyyy-mm-dd') rdate
+				                ,decode(state,'1','정상','2','중지','3','탈퇴','4','삭제') state
+				         FROM  memberinfo 
+
+				  		WHERE  1=1
+				  
+					  <isNotNull property="searchCondition">
+					  	<isNotEmpty property="searchCondition">
+					    	AND $searchCondition$ LIKE '%$searchKeyword$%'
+				      	</isNotEmpty>
+				      </isNotNull>
+				 
+				  ) a  ) b
+				  
+			WHERE 	
+				  rn  BETWEEN  $firstIndex$  AND  $lastIndex$ 
+	</select>
+	
+	<select id="adminDAO.selectMemberTotal" resultClass="int">
+		SELECT COUNT(*) FROM memberinfo 
+			WHERE  1 = 1
+			  <isNotNull property="searchCondition">
+			  	<isNotEmpty property="searchCondition">
+			    	  AND  $searchCondition$ LIKE '%$searchKeyword$%'
+		      	</isNotEmpty>
+		      </isNotNull>
+	</select>
+
+	<select id="adminDAO.selectNoticeTotal" resultClass="int">
+		SELECT COUNT(*) FROM noticeboard 
+			WHERE  1 = 1
+				  <isNotNull property="searchCondition">
+				  	<isNotEmpty property="searchCondition">
+				    	  AND  $searchCondition$ LIKE '%$searchKeyword$%'
+			      	</isNotEmpty>
+			      </isNotNull>
+	</select>
+	
+	<select id="adminDAO.selectNoticeDetail" resultClass="noticeVO">
+		SELECT   unq
+        		,title
+        		,name
+        		,hits
+        		,to_char(rdate,'yyyy-mm-dd') rdate
+        		,content
+                ,emps  
+           FROM noticeboard 
+          WHERE 
+          		unq=#unq#
+	</select>
+	
+	<select id="adminDAO.selectMemberDetail" resultClass="memberVO">
+		 select   userid
+		          ,pass
+		          ,name
+		          ,nickname
+		          ,email
+		          ,phone
+		          ,mobile
+		          ,mailchk
+		          ,smschk
+		          ,rdate
+		          ,udate
+		          ,state
+		          ,memo
+		from   memberinfo
+		where  userid=#userid#
+	</select>
+	
+	<update id="adminDAO.updateMemberSave">
+		 update memberinfo 
+		 		set 
+			           name = #name#
+			          ,email = #email#
+			          ,phone = #phone#
+			          ,mobile = #mobile#
+			          ,mailchk = #mailchk#
+			          ,smschk = #smschk#
+			          ,state = #state#
+			          ,memo = #memo#
+		  where  
+		  		userid=#userid#
+	</update>
+
+	<delete id="adminDAO.deleteMemberUser">
+		DELETE FROM memberinfo WHERE userid=#userid#
+	</delete>
+
+	<delete id="adminDAO.deleteNotice">
+		DELETE FROM noticeboard WHERE unq=#unq#
+	</delete>
+	
+	<update id="adminDAO.updateNotice">
+		UPDATE noticeboard  SET
+				        TITLE=#title#    
+				       ,NAME=#name#   
+				       ,CONTENT=#content#
+				       ,EMPS=#emps#
+				WHERE
+						UNQ=#unq# 
+	</update>
+	
+	<update id="adminDAO.updateMenu">
+		UPDATE menu SET menuname=#menuname#,useyn=#useyn# 
+		 WHERE no=#no#
+	</update>
+	
+	<update id="adminDAO.updateMenuNo">
+		UPDATE menu SET no=no-1 WHERE no>#no#
+	</update>
+	
+	<delete id="adminDAO.deleteMenu">
+		DELETE FROM menu WHERE no=#no#
+	</delete>
+
+</sqlMap>
+
+
+
+
+

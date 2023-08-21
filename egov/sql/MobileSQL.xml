@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MobileSpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="mobileVO"  type="egov.mywork1.service.MobileVO"/>
+	
+	<insert id="mobileDAO.insertMobile">
+		INSERT INTO MOBILE1( UNQ
+					       ,NAME      
+					       ,TYPE1   
+					       ,EQU_DATE 
+					       ,STATEMENT1
+					       ,PRICE) 
+		           VALUES( MOBILE_SEQ.NEXTVAL 
+						  ,'$name$'
+						  ,'$type$'
+						  ,'$equ_date$'
+						  ,'$statement$'
+						  ,'$price$' )			  
+	</insert>
+	
+	<select id="mobileDAO.selectMobileList" resultClass="egovMap">
+	 	 SELECT UNQ
+		       ,NAME      
+		       ,TYPE1   
+		       ,EQU_DATE as equdate
+		       ,STATEMENT1
+		       ,PRICE
+		 FROM MOBILE1
+	</select>
+	
+	<select id="mobileDAO.selectMobileList2" resultClass="egovMap">
+	 	 SELECT EQU_DATE as equdate 
+	 		   ,TYPE1   
+		       ,PRICE
+		 FROM MOBILE1
+	</select>
+	
+	<delete id="mobileDAO.deleteMobile">
+		DELETE FROM mobile1 WHERE unq=#unq#
+	</delete>
+	
+
+</sqlMap>
+
+
+
+
+

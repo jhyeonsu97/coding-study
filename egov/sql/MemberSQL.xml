@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="MemberSpace">
+
+	<typeAlias  alias="egovMap"   type="org.egovframe.rte.psl.dataaccess.util.EgovMap"/>
+	<typeAlias  alias="defaultVO" type="egov.mywork1.service.DefaultVO"/>
+	<typeAlias  alias="memberVO"  type="egov.mywork1.service.MemberVO"/>
+	
+	<insert id="memberDAO.insertMember">
+		INSERT INTO memberinfo ( 	
+						 USERID
+						,PASS
+						,NAME
+						,NICKNAME
+						,EMAIL
+						,PHONE
+						,MOBILE
+						,MAILCHK
+						,SMSCHK
+						,RDATE
+						,UDATE) 
+		           VALUES(
+						 #userid#
+						,#pass#
+						,#name#
+						,#nickname#
+						,#email#
+						,#phone#
+						,#mobile#
+						,#mailchk#
+						,#smschk#
+						,sysdate
+						,sysdate )			  
+	</insert>
+	
+	<select id="memberDAO.selectMemberUserid"  resultClass="int">
+		select count(*)  from  memberinfo  where userid=#userid#
+	</select>
+	
+	<select id="memberDAO.selectMemberNickname"  resultClass="int">
+		select count(*)  from  memberinfo  where nickname=#nickname#
+	</select>
+	
+	<select id="memberDAO.selectMemberLogin"  resultClass="string">
+		select name from  memberinfo  
+					where userid='$userid$' and pass='$pass$'
+	</select>
+	
+	<select id="memberDAO.selectMemberDetail" resultClass="memberVO">
+		SELECT 	 USERID
+				,NAME
+				,NICKNAME
+				,EMAIL
+				,PHONE
+				,MOBILE
+				,MAILCHK
+				,SMSCHK
+				,RDATE
+				,UDATE
+		FROM 	
+				MEMBERINFO
+		WHERE	
+				USERID = #userid#
+	</select>
+	
+	<update id="memberDAO.updateMember">
+		UPDATE memberinfo SET
+	                       name=#name#
+	                      ,nickname=#nickname#
+	                      ,email=#email#
+	                      ,phone=#phone#
+	                      ,mobile=#mobile#
+	                      ,mailchk=#mailchk#
+	                      ,smschk=#smschk#
+	                      ,udate=sysdate
+	      WHERE userid = #userid#
+	        AND   pass = #pass#
+	
+	</update>
+	
+	<select id="memberDAO.selectPreventName" resultClass="string">
+		select imgname from preventImg where no=#no#
+	</select>
+
+	<select id="memberDAO.selectMemberUseridReturn" resultClass="string">
+		select userid from memberinfo where nickname=#nickname#
+									    and  email=#email#
+	</select>
+	
+	<select id="memberDAO.selectMemberExistCount" resultClass="int">
+		select count(*) from memberinfo where userid=#userid#
+		                                  and nickname=#nickname#
+									      and email=#email# 
+	</select>
+	
+	<select id="memberDAO.selectMemberState" resultClass="string">
+	
+		SELECT state FROM memberinfo where userid=#userid#
+		
+	</select>
+	
+	
+	<update id="memberDAO.updateMemberPass">
+		UPDATE memberinfo SET pass=#pass# WHERE userid=#userid#
+	</update>
+	
+	<update id="memberDAO.updateMemberNewPass">
+		update memberinfo 
+				set pass=#pass2# 
+          	where userid=#userid# and pass=#pass1#
+	</update>
+	
+</sqlMap>
+
+
+
+
+
