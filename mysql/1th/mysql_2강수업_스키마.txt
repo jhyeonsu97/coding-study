@@ -1,0 +1,37 @@
+create table student (
+ userid varchar(20) not null,
+ username  char(20) not null,
+ age tinyint default '0',
+ gender enum('M','F'),
+ grade enum('1','2','3') );
+
+  insert into student
+ (userid,username,age,gender,grade)
+ values ('st101','Tom','15','M','2');
+
+  insert into student
+ (userid,username,age,gender,grade)
+ values ('st102','Jane','16','F','3');
+
+  insert into student
+ (userid,username,age,gender,grade)
+ values ('st103','Yakima','14','M','1');
+
+  insert into student
+ (userid,username,age,grade)
+ values ('st104','Yong','14','1');
+
+  insert into student
+ (userid,username,gender)
+ values ('st105','Minyo','F');
+ 
+  insert into student
+ (userid,username,age,grade)
+ values ('st106','Kang','15','2');
+
+  insert into student
+ (userid,username,gender)
+ values ('st107','Kim','M');
+
+  insert into student
+  values ('st108','Miranda','15','F','2');

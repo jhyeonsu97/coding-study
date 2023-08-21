@@ -1,0 +1,15 @@
+[프롬프트 접속]
+c:/>mysql -utest1 -p123456 apple
+
+mysql>show tables;
+
+mysql>exit;
+-----------------------------------------------------------
+c:/>mysqldump -utest1 -p123456 apple > db.sql -- 날려버리기?
+
+c:/>mysql -utest1 -p123456 apple < db.sql -- 유실 복구
+
+c:/>mysql dump -utest1 -123456 apple post1 > post1.sql -- 부분삭제
+
+c:/>mysql -utest1 -123456 apple < post1.sql -- 복구(부분백업)
+

@@ -1,0 +1,35 @@
+create table post1 (
+	a1 char(6),
+	a2 varchar(50),
+	a3 varchar(50),
+	a4 varchar(50),
+	a5 varchar(50),
+	a6 varchar(50),
+	a7 varchar(100)
+);
+
+truncate table post1; -- 테이블 초기화(비우기)
+
+1. 전체 데이터 개수 출력
+select count(*) from post1;
+
+2. 서울 데이터 개수 출력
+select count(*) from post1 where a2 like '%서울%';
+
+3. 문화동이 어느구나 시에 있는지 검색
+select * from post1 where a4 like '%문화동%'
+group by a2;
+
+4. 전국에 "중앙하이츠" 아파트가 몇개가 있는지 출력
+select a3, count(*) from post1 where a7 like '%중앙하이츠%'
+group by a3
+order by count(*) desc;
+
+5. 서울시에 어떤 구들이 있는지 구만 출력
+select distinct(a3) from post1 where a2 like '%서울%'; -- 중첩방지
+
+6. 다음 내용 검색하여 하나의 컬럼형식으로 연결하여 출력
+   (306762 대전광역시 대덕구 목상동 동원상수아파트)
+select a1||' '||a2 from post1 where a1='306762';
+select concat(a1,' ' ,a2,' ',a3)as 'adress' from post1 where a1 = '306762';-- 연결연산자
+

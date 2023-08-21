@@ -1,0 +1,114 @@
+create table studentScore (
+	unq int not null auto_increment, -- 시퀀스 대신 사용
+	userid varchar(10) not null,
+	loc varchar(10) not null,
+	kor tinyint unsigned default '0',
+	eng tinyint unsigned default '0',
+	primary key(unq)
+);
+
+insert into studentScore values('','test2','bbb','90','80');
+
+<oracle>
+select rownum rnm, a.* from(
+	select * from studentscore order by unq asc) a
+-----------------------------------------------------------------------	
+select * from studentscore order by unq asc limit 40;
+
+select * from studentscore order by unq asc limit 40;
+
+(7) 영어점수 기준으로 1 ~ 5등까지 학생들 출력
+select * from studentscore order by eng desc limit 5; -- 역순정렬
+
+(8) 영어점수 기준으로 6 ~ 10등인 학생들 출력
+-- limit index번호(행번호)2, 출력개수
+select * from studentscore order by eng desc limit 5,5; -- 6번째 위치한 곳에서 5개의 데이터 가져오라는 의미
+
+(9) 전체 총합 1등의 아이디, 이름 , 총합점수 출력
+select userid, (kor+eng) hap from studentscore
+where (kor+eng) = (select max(kor+eng) from studentscore);
+-- order by (kor+eng) desc limit 1;
+
+(10) 아이디가 101인 데이터의 영어점수에 +5 적용
+update studentscore set eng = eng+5
+where userid like '%101%';
+
+(11) 대구지역 학생 목록 출력
+
+(12) 대구지역 학생수 출력
+
+(13) 대구지역에서 영어점수가 가장 높은 학생의 아이디와 영어점수 출력
+
+(14) 대구지역에서 두 과목 합계 1등의 아이디와 총점 출력
+select userid, (kor+eng) hap, loc from studentscore
+where loc='2' and
+(kor+eng) =
+(select max(kor+eng) from studentscore where loc='2');
+
+(15) 국어, 영어점수에 따른 학점부여 
+create view v_studentscore1 as
+select userid,
+	kor,
+	case 
+		when kor >= 90 then 'A'
+		when kor >= 80 then 'B'
+		when kor >= 70 then 'C'
+		when kor >= 60 then 'D'
+		else 'F'
+	end as 'kor_grade',
+	eng,
+	case 
+		when eng >= 90 then 'A'
+		when eng >= 80 then 'B'
+		when eng >= 70 then 'C'
+		when eng >= 60 then 'D'
+		else 'F'
+	end as 'eng_grade'
+from studentscore;
+------------------------------------------------------------------
+select * from v_studentscore1 order by eng_grade asc;
+
+-- 그룹별 인원수(영어학점)
+select eng_grade, count(*) from v_studentscore1 
+group by eng_grade;
+
+-- 영어점수의 평균
+select eng_grade as'학점',
+	count(*) as '인원수',
+	round(avg(eng)) as '평균'
+from v_studentscore1 
+group by eng_grade;
+
+-- 테이블 생성
+create table studentscore2 as
+select userid,
+	kor,
+	case 
+		when kor >= 90 then 'A'
+		when kor >= 80 then 'B'
+		when kor >= 70 then 'C'
+		when kor >= 60 then 'D'
+		else 'F'
+	end as 'kor_grade',
+	eng,
+	case 
+		when eng >= 90 then 'A'
+		when eng >= 80 then 'B'
+		when eng >= 70 then 'C'
+		when eng >= 60 then 'D'
+		else 'F'
+	end as 'eng_grade'
+from studentscore;
+
+5. 주소 값 변경 ex) 서울->서울특별시 강남구
+
+-- like 연산자 검색
+(1) 수성구에 사는 학생들 출력
+select * from studentScore where loc '%수성구%';
+
+(2) 서울에 사는 학생들 출력
+select * from studentScore where loc '%서울%';
+
+
+
+

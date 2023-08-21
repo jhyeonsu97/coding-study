@@ -1,0 +1,14 @@
+Q1. (3) 성별이 입력되지 않은 데이터의 아이디 값 출력(null값 및 공백)
+select userid, gender from student
+	where gender is null or gender=' ';
+
+[case함수]
+select userid, case
+	when gender='M' then '남'
+	when gender='F' then '여'
+	else '모름'
+end as '성별' from student;
+--------------------------------------------------------------
+<oracle>
+select userid, decode(gender,'M','남','F','여','모름') as '성별'
+	from student;
