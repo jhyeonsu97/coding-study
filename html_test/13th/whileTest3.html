@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>반복문을 이용한 달력형식 출력</title>
+ </head>
+
+ <script>
+
+ while(true) {
+	 var pwd = prompt("패스워드 입력", "");
+	 if(pwd != "123456") {
+		 continue;	// (반복문)재실행
+	 } else {
+		 break;		// (반복문)종료	
+	 }
+ }
+ 
+
+ var a = 1;
+ document.write("<table border='1'>");
+ document.write("<tr>");
+ for (var a=1; a<=31; a++) {
+	document.write("<td width='50' align='center'>" + a + "</td>");
+	if ( a==7 || a==14 || a==21 || a==28 ) {
+		document.write("</tr><tr>");
+	}
+ }
+ document.write("</tr>");
+ document.write("</table>");
+
+ // 
+ document.write("<hr>");
+ var a = 1;
+ document.write("<table border='1'>");
+ document.write("<tr>");
+ var cnt = 0;
+ for (var a=1; a<=31; a++) {
+	document.write("<td width='50' align='center'>" + a + "</td>");
+	if ( a%7==0 ) {
+		document.write("</tr><tr>");
+	}
+	cnt++;
+ }
+ while ( cnt%7 !=0) {
+	 document.write("<td></td>");
+	 cnt++;
+ }
+ document.write("</tr>");
+ document.write("</table>");
+
+ // document.write(cnt);
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

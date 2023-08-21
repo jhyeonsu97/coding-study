@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ function fn_result1() {
+	var n1 = Number(document.frm.a1.value);
+	var n2 = Number(document.frm.a2.value);
+	var result = n1+n2;
+	alert(n1 + "+" + n2 + "=" + result);
+ }
+
+ function fn_result2() {
+	 var n1 = Number(document.frm.a1.value);
+	 var n2 = Number(document.frm.a2.value);
+	 var result = n1-n2;
+	 alert(n1 + "-" + n2 + "=" + result);
+ }
+
+ function fn_result3() {
+	 var n1 = Number(document.frm.a1.value);
+	 var n2 = Number(document.frm.a2.value);
+	 var result = n1*n2;
+	 alert(n1 + "x" + n2 + "=" + result);	
+ }
+
+ function fn_result4() {
+	 var n1 = Number(document.frm.a1.value);
+	 var n2 = Number(document.frm.a2.value);
+	 var result = n1/n2;
+	 alert(n1 + "/" + n2 + "=" + result);
+ }
+
+ </script>
+
+ <body>
+
+ <form name="frm">
+ 
+ <input type="number" name="a1" style="width:50px;"> 
+ <input type="number" name="a2" style="width:50px;"> =
+ <input type="button" value="덧셈" onclick="fn_result1()">
+ <input type="button" value="뺄셈" onclick="fn_result2()">
+ <input type="button" value="곱셈" onclick="fn_result3()">
+ <input type="button" value="나눗셈" onclick="fn_result4()">
+
+ </form>
+  
+ </body>
+</html>

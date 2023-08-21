@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <script>
+function fn_plus() {
+	var box = Number(document.frm.box.value);
+	box++;
+	document.frm.box.value = box;
+	}
+	function fn_minus() {
+	var box = Number(document.frm.box.value);
+	box--;
+	if (box < 0 )	{
+		box =0;
+
+	}
+	document.frm.box.value = box;
+	}
+  </script>
+ </head>
+ <body>
+  <form name="frm" method="post" action="">
+  <input type="text" name="box" value="1" readonly>
+  <input type="button" value="+" onclick="fn_plus()">
+  <input type="button" value="-" onclick="fn_minus()">
+
+
+ </body>
+</html>

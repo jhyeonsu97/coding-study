@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ <script>
+var hap = 0;
+var avg = 0;
+var max = 0;
+var min = 9999;
+var cnt = 0; //쓰레기 데이터, 음수 카운트
+// 평균값, 최대값, 최소값, 쓰레기데이터 제외 처리
+var a_height = [178, 164, 186, 168, 172, -156, 174];
+
+for ( var i=0; i<a_height.length; i++ ){
+	if (a_height[i] > 0){
+		hap += a_height[i];
+
+
+		if (min > a_height[i]){
+		min = a_height[i];
+	}
+	} else {
+		cnt ++; // cnt +=1; cnt = cnt+1로 대체 가능
+	}
+	if (max < a_height[i]){
+		max = a_height[i];
+	}
+}
+avg = Math.floor(hap / (a_height.length-cnt));
+document.write("평균키 : " + avg +"<br>");
+document.write("최장신 : " + max +"<br>");
+document.write("최단신 : " + min +"<br>");
+document.write("<hr>");
+
+  // 중앙값
+ var a_height = [178, 164, 186, 168, 172, -156, 174];
+ a_height = a_height.sort();
+ var b_height = new Array();
+ var j = 0;
+ for ( var i=0; i<a_height.length; i++){
+	 if ( a_height[i] >0 ) {
+		   b_height[j] = a_height[i];
+		    j++ ; 
+	 }
+ }
+ document.write( b_height + "<br>");
+ var center = Math.floor (b_height.length/2) ; 
+  document.write( "중앙값 : "+ b_height[center]);
+ //document.write(a_height.sort() +"<br>");
+ // document.write(a_height );
+ </script>
+ </head>
+ <body>
+  
+ </body>
+</html>

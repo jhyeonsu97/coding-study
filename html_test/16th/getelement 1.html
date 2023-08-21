@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+function  fn_action() {
+	// var id = document.frm.userid.value;
+	var id = document.getElementById("id").value;
+	var nm = document.getElementById("nm").value;
+	if (id == ""){
+		alert("아이디를 입력해 주세요");
+		return;
+	}
+	// alert("아이디 :"+id+"이름 :"+nm);
+}
+ </script>
+
+ <body>
+  <form name="frm">
+  <input type= "text" id="id" name="useid"> <br>
+  <input type ="text" id="nm" name="username"> <br>
+  <input type ="button" value="전송" onclick="fn_action()">
+  </form>
+  </body>
+  
+ </body>
+</html>

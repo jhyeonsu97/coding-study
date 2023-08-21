@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ function fn_action() {
+
+	 /*
+	 if (document.frm.ans[0].checked == false &&
+		 document.frm.ans[1].checked == false &&
+		 document.frm.ans[2].checked == false &&
+		 document.frm.ans[3].checked == false)
+		 {
+			 alert("아무것도 체크 안 했음");
+			 return;
+		 }
+	 */
+	 var chk = false;
+	 for (var i=0; i<4; i++) { // 0~3
+		 if(document.frm.ans[i].checked==true) {
+			 chk = true;
+		 }
+	 }
+	 if (chk==false) {
+		 alert("투표하지 않았습니다.");
+		 return;
+	 }
+		 document.frm.submit();
+ }
+
+ </script>
+
+ <body>
+  
+ <form name="frm">
+ [다음 중 가장 자주 마시는 소주는 ? ] <br>
+ <input type="radio" name="ans" value="1"> 참이슬 <br>
+ <input type="radio" name="ans" value="2"> 진로 <br>
+ <input type="radio" name="ans" value="3"> 처음처럼 <br>
+ <input type="radio" name="ans" value="4"> 맛있는 참 <br>
+ <input type="button" value="투표" onclick="fn_action()">
+
+ </form>
+
+ </body>
+</html>

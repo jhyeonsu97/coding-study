@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ function add(n) {
+	 var content = document.frm.screen.value;
+	 var len = content.length;
+	 var lastValue = content.substring(len-1,len);
+
+	 var c1 = false;
+	 if ( lastValue == "+" || 
+		  lastValue == "-" || 
+		  lastValue == "*" || 
+		  lastValue == "/" ) 
+	 {
+		  c1 = true;	
+	 }
+	 // 숫자일 경우 c1 -> false;
+	 // 숫자가 아닌 경우 c1 -> true;
+
+	 var c2 = false;
+	 if ( n == "+" || n == "-" || n == "*" || n == "/" ) 
+	 {
+		  c2 = true;	
+	 }
+	 // 숫자일 경우 c2 -> false;
+	 // 숫자가 아닌 경우 c2 -> true;
+
+	 if ( c1 == false || c2 == false ) { // 둘 다 true 면 안 됨
+	  document.frm.screen.value = content + n;
+	 }
+ }
+
+
+ function result() {
+	 // eval 연산처리함수
+	 var content = eval(document.frm.screen.value);
+	 document.frm.screen.value = content;
+ }
+ function fn_clear() {
+	document.frm.screen.value = "" ;
+ }
+
+ </script>
+
+ <body>
+
+ <form name="frm">
+	<input type="text" name="screen" readOnly size="7"> <br>
+	<input type="button" value="1" onclick="add('1')">
+	<input type="button" value="2" onclick="add('2')">
+	<input type="button" value="3" onclick="add('3')"> <br>
+	<input type="button" value="+" onclick="add('+')">
+	<input type="button" value="-" onclick="add('-')">
+	<input type="button" value="*" onclick="add('*')"> <br>
+	<input type="button" value=" = " onclick="result()">
+	<input type="button" value="clear" onclick="fn_clear()">
+  
+ </form>
+  
+ </body>
+</html>

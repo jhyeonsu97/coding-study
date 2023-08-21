@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ 
+ var hap = 0;
+ var avg = 0;
+ var max = 0;
+ var min = 9999;
+ var cnt = 0;
+ // 평균키, 최대값, 최저값, 쓰레기데이터 제외 처리
+ var a_height = [178, 164, 186, 168, 172, -156, 174];
+
+ for ( var i=0; i<a_height.length; i++ ) {
+	 if ( a_height[i] > 0 ) {
+		hap += a_height[i];
+	 if ( min > a_height[i] ) {
+		  min = a_height[i]
+	 }
+	 } else {
+		 cnt++; // = [cnt += 1; / cnt = cnt+1;]
+	 }
+	 if ( max < a_height[i] ) {
+		  max = a_height[i];
+	 }
+ }
+ avg = Math.floor( hap / (a_height.length-cnt) );
+ document.write("avg : " + avg + "<br>");
+ document.write("max : " + max + "<br>");
+ document.write("min : " + min);
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

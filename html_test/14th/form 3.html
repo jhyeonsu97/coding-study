@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>게시판 입력 화면</title>
+ </head>
+ <script>
+
+function fn_action() {
+	var title = document.frm.title.value;
+	var pass = document.frm.pass.value;
+	var name = document.frm.name.value;
+	var email = document.frm.email.value;
+	var content = document.frm.content.value;
+
+	if (title == "")	{
+		alert("제목을 입력해주세요.")
+		return;
+	}
+	if (pass == "")	{
+		alert("암호를 입력해주세요.")
+		return;
+	}
+	if (name == "")	{
+		alert("이름을 입력해주세요.")
+		return;
+	}
+	 document.frm.submit();
+}
+
+ </script>
+ <body>
+ <form name="frm" method="post" action="save.jsp">
+ <table border="1" width="300">
+	<caption>게시판 목록</caption> <!--table설명 달때 사용-->
+	<colgroup>
+		<col width="25%"/>
+		<col width="*" />
+	</colgroup>
+	<tr>
+		<td >제목</td>
+		<td><input type="text" name="title" autofocus></td>
+	</tr>
+	<tr>
+		<td>암호</td>
+		<td><input type="password" name="pass"></td>
+	</tr>
+	<tr>
+		<td>글쓴이</td>
+		<td><input type="text" name="name"></td>
+	</tr>
+	<tr>
+		<td>이메일</td>
+		<td><input type="email" name="email"></td>
+	</tr>
+	<tr>
+		<td>내용</td>
+		<td><textarea name="content"></textarea></td>
+	</tr>
+	<tr>
+		<!-- type="submit" : [enter] 기능+ [전송] 기능
+			   return false : submit의 전송기능 삭제-->
+		<th colspan="2">
+			<input type="submit" value="저장하기" onclick="fn_action(); return false;">
+			<input type="reset" value="다시쓰기" >
+		</th>
+	</tr>
+
+  </table>
+</form>
+ </body>
+</html>

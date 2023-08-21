@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+function fn_action() {
+	var c1 = document.frm.subject[0].checked;
+	var c2 = document.frm.subject[1].checked;
+
+	var chk = document.frm.chk.checked;
+
+	if (chk == false){
+		alert("약관에 동의해주십시오.");
+		return;
+	}
+
+	// alert(c1 + "," + c2 );
+	if (c1 == false && c2 == false)	{
+		alert("과목을 선택해주세요.");
+		return;
+	}
+
+	//alert(c1+ ","+c2);
+	if (document.frm.month.value == "")	{
+		alert("수강월을 선택해주세요.");
+		return;
+	}
+	document.frm.submit();
+}
+ </script>
+
+ <body>
+  <form name="frm" method="post" action="save.jsp">
+
+<div style="width:400px; height:200px; background:yellow;" >
+약관 약관 ~~~~
+</div>
+<input type="checkbox" name="chk">
+약관에 동의하십니까?
+<br>
+
+
+  학습과목
+  <input type="checkbox" name="subject" value="java" checked> 자바, 
+ <input type="checkbox" name="subject" value="oracle" checked> 오라클 <br>
+
+수강일
+<select name="month" size="2"> <!--size=선택상자 펼침 갯수 -->
+	<option value=""> - 선택 - </option>
+	<option value="1"> 1월 </option>
+	<option value="2" selected> 2월 </option> <!--selected입력시 체크돼서 출력-->
+	<option value="3"> 3월 </option>
+</select><br>
+
+ <input type="button" value="send" onclick="fn_action()">
+</form>
+ </body>
+</html>

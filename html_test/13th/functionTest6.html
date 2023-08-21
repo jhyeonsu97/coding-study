@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ 
+ // substring(0, 3) : 범위 설정(0번 자리 ~ 2번 자리)
+ /*
+ var a = "12345";
+ var b = a.substring(0, 3);
+ alert(b);
+ */
+
+ var a = "abcdefghijklmnopqrstuvwxyz";			   // 자리번호
+ var len = a.length;
+ // var b = a.substring(0, 3); // 0 ~ 3 ,, abc
+ // var b = a.substring(2, 4); // 2 ~ 3 ,, cd
+ // var b = a.substring(2, 3); // 2 ~ 2 ,, c
+ // var b = a.substring(4, 5); // 4 ~ 4 ,, e
+ var b = a.substring(len-1, len);
+ alert(b);
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

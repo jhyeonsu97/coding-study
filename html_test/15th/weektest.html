@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+ function fn_action() {
+	var id = document.frm.id.value;
+	var pass = document.frm.pass.value;
+	var name = document.frm.name.value;
+	var gender = document.frm.gender.value;
+	var number = document.frm.number.value;
+	var email = document.frm.email.value;
+	var adress = document.frm.adress.value;
+
+	if (id == ""){
+		alert("아이디를 입력해주세요.");
+		return;
+	}
+	if (document.frm.id.value.length<4 || document.frm.id.value.length>12 ){
+		alert("아이디는 4~12자 사이로 입력해주세요.");
+		return;
+	}
+
+	if (pass == ""){
+		alert("비밀번호를 입력해주세요.");
+		return;
+	}
+	if (document.frm.pass.value.length<4 || document.frm.pass.value.length>12 ){
+		alert("패스워드는 8~20자 사이로 입력해주세요.");
+		return;
+	}
+
+	if (name == ""){
+		alert("이름을 입력해주세요.");
+		return;
+	} else {
+		// name = "abc12"; --> name[0]="a" , name[1]="b"
+		// inNaN("ab"); true
+		// inNaN("12"); false
+		// inNaN("ab12"); true
+		for ( var i=0; i<name.lenth; i++ ) { //lenth길이=5
+			if (isNaN(name[i]) == false) {
+				alert("이름에 숫자가 들어가면 안돼요!");
+				return;
+			}
+		}
+	}
+	alert("ok");
+
+	
+	if (gender == ""){
+		alert("성별을 입력해주세요.");
+		return;
+	}
+	if (number == ""){
+		alert("번호를 입력해주세요.");
+		return;
+	}  else {
+			//number = "01012345678"
+			for (var i=0; i<number.length ; i++){
+				if (isNaN(number[i]) == true) {
+					alert("핸드폰번호는 숫자만 가능합니다");
+					return;
+				}
+			}
+		}
+	
+	if (email == ""){
+		alert("이메일을 입력해주세요.");
+		return;
+	}
+	if (adress == ""){
+		alert("주소를 입력해주세요.");
+		return;
+	}
+
+
+/*var checkbox=document.frm.class.length;
+var c1=document.frm.class[0].checked;
+var c2=document.frm.class[1].checked;
+var c3=document.frm.class[2].checked;
+var c4=document.frm.class[3].checked;
+var c5=document.frm.class[4].checked;
+
+let sum=0;    
+let count = frm.class.length;
+
+for (var i=0; i<count; i++){
+	if (frm.class[i].checked==true){
+		sum += 1;
+	}
+}
+	if (sum < 3)	{
+		alert("체크박스는3개 이상 선택되어야 합니다.");
+		return;
+	}*/
+
+	var cnt= 0;
+	var len = document.frm.subject.length;
+	for (var i=0; i<len; i++){
+		if (document.frm.subject[i].checked == true){
+				cnt++;
+		}
+	}
+	if (cnt < 3) {
+		alert("수강과목은 3개이상 체크해주세요");
+		return;
+	}
+	document.frm.submit();
+}
+
+	
+
+ </script>
+ <body>
+  <form name="frm" method="post" action="save.jsp">
+  <table border="1" width="350">
+<caption>{학생회원등록}</caption>
+<colgroup>
+	<col width="25%">
+	<col width="*">
+</colgroup>
+<tr>
+	<th>아이디</th>
+	<td><input type="text" name="id" maxlength="12 " placeholder="4자 ~12자 사이 입력" autofocus></td>
+</tr>
+<tr>
+	<th>암호</th>
+	<td><input type="password" name="pass" maxlength="20" placeholder="8자 ~20자 사이 입력"></td>
+</tr>
+<tr>
+	<th>이름</th>
+	<td><input type="text" name="name" ></td>
+</tr>
+<tr>
+	<th>성별</th>
+	<td><input type="radio" name="gender">여
+			<input type="radio" name="gender">남</td>
+</tr>
+<tr>
+	<th>핸드폰</th>
+	<td><input type="number" name="number"></td>
+</tr>
+<tr>
+	<th>이메일</th>
+	<td><input type="email" name="email"></td>
+</tr>
+<tr>
+	<th>주소</th>
+	<td><input type="text" name="adress"></td>
+</tr>
+<tr>
+	<th>수강과목</th>
+	<td><input type="checkbox" name="class" value="html">html
+			<input type="checkbox" name="class" value="javascript">javascript
+			<input type="checkbox" name="class" value="java">java<br>
+			<input type="checkbox" name="class" value="oracle">oracle
+			<input type="checkbox" name="class" value="spring">spring</td>
+</tr>
+<tr >
+	<th colspan="2"><input type="button" value="저장하기" onclick="fn_action();">
+								 <input type="reset" value="초기화"></th>
+</tr>
+
+</table>
+  </form>
+ </body>
+</html>

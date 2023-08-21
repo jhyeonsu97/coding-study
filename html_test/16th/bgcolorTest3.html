@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ function fn_color(color) {
+	document.bgColor = color;
+ }
+ </script>
+
+ <body>
+
+ <table>
+ <script>
+	var color = ["00", "33", "66", "99", "cc", "ff"];
+	// 전체 36회 실행
+
+	for (var i=0; i<=5; i++) { // 6회 실행 
+		for (var j=0; j<=5; j++) {	// 바깥 for문 1회 당 6회
+			for (var k=0; k<=5; k++) {
+			c = color[i]+color[j]+color[k];
+			document.write("<tr><td bgcolor='#"+c+"'onMouseOver=\"fn_color('#"+c+"')\">"+c+"</td></tr>");
+			}
+		}
+	}
+ </script>
+ </table>
+
+ </body>
+
+</html>

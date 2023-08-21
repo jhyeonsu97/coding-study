@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>while문</title>
+  <script>
+  var a= 10;
+  if (a < 30) {
+	  document.write("111");
+  }
+document.write("<hr>");
+
+  var a= 1;
+  // for ( var a=1; a<=10; a++) 
+  while ( a <=10)  {
+	  document.write(a + "<br>");
+	  a++;
+  }
+  document.write("<hr>");
+
+ var a = 1;
+  while ( a <= 10)  {
+	  document.write( a + "		 ")
+	  a+=2;
+  }
+  document.write("<hr>");
+
+ // 풀어보기 2
+  var a= 1;
+  while (a<=10){
+	  document.write("<input type='submit' value='버튼"+a+"'></input>");
+	  a++;
+  }
+  document.write("<hr>");
+
+// 풀어보기 3
+var n3= 1;
+document.write("<table border='1'>");
+document.write("<tr>");
+while( n3<6){
+	document.write("<td width = '50' >" +n3 + "</td>");
+	n3++;
+}
+document.write("</tr>");
+document.write("</table>");
+document.write("<hr>");
+
+ // 패스워드 걸기
+  while (true)  { // 조건달지 않고 무한루프
+	  var pwd = prompt ("암호입력","");
+	  if (pwd != "123456")	  {
+		  alert("다시 입력해주세용"); // 확인창
+		  confirm("다시 입력 ㄱㄱ"); // 
+		  	continue; // (반복문) 재실행
+		} else {
+			break; // (반복문) 종료
+		}
+  }
+  
+  // 반복문을 이용한 달력형식 출력
+document.write("<table border='1'>");
+document.write("<tr>");
+for ( var i=1; i<=31; i++){
+	document.write("<td width='50'>"+ i + "</td>");
+	if ( i%7==0){
+		document.write("</tr><tr>");
+	}
+}
+document.write("	</tr>");
+document.write("</table>");
+document.write("<hr>");
+
+// 반복문을 이용한 달력형식 출력 + 빈칸채우기
+var i = 1;
+document.write("<table border='1'>");
+document.write("<tr>");
+var cnt = 0;
+for ( var i=1; i<=31; i++){
+	document.write("<td width='50'>"+ i + "</td>");
+	if ( i%7==0){
+		document.write("</tr><tr>");
+	}
+	cnt++; 
+}
+while( cnt%7 != 0 ) {
+	document.write("<td>" +cnt +"</td>");
+	cnt++;
+}
+
+document.write("	</tr>");
+document.write("</table>");
+document.write(cnt);
+document.write("<hr>");
+
+var j = 1;
+while ( true ){
+	if (j==31) {
+		break;
+	} else if ( j == 5 || j==10){
+		j++; // 이거 없으면 계속 5로 실행
+		continue; // 하단명령 실행하지 않고 다시올라감,  반복문 시작시점으로 올림
+	}
+	document.write(j +"	");
+	j++;
+}
+document.write("<hr>");
+  </script>
+ </head>
+
+ <body>
+  
+ </body>
+</html>

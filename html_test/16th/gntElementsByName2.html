@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ function fn_action() {
+	 var id = document.getElementsByName("userid");
+	 var nm = document.getElementsByName("username");
+	 var gender = document.getElementsByName("gender");
+	 alert("아이디 : " + id[0].value + ", 이름 : " + nm[0].value);
+	 alert("성별세팅 : " + gender[0].value + "," + gender[1].value);
+ }
+
+ </script>
+
+ <body>
+
+ <form name="frm">
+
+ <input type="text" id="id" name="userid"> <br>
+ <input type="text" id="nm" name="username"> <br>
+ <input type="radio" name="gender" value="M"> 남,
+ <input type="radio" name="gender" value="F"> 여 <br>
+ <input type="button" value="전송" onclick="fn_action()">
+
+ </form>
+
+ </body>
+</html>

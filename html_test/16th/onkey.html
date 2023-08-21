@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>onkeypress 이벤트 핸들러</title>
+ </head>
+ <script>
+function fn_press() {
+	document.frm.a1.value = document.frm.a2.value;
+}
+function fn_up() {
+	document.frm.a1.value = document.frm.a3.value;
+}
+function fn_down() {
+	document.frm.a1.value = document.frm.a4.value;
+}
+
+function fn_copy(){
+	var check = document.frm.chk.checked; // true or false
+	if (check == true ){
+		document.frm.addr2.value = document.frm.addr1.value;
+	} else {
+	document.frm.addr2.value = "";
+	}
+}
+ </script>
+ <style>
+	body {line-height:2.0;}
+ </style>
+ <body>
+ <form name="frm">
+ 1. <input type = "text" name="a1"> <br>
+ 2. <input type = "text" name="a2" onkeypress="fn_press()">onkeypress<br>
+ 3. <input type = "text" name="a3" onkeypress="fn_up()">onkeyup<br>
+ 4. <input type = "text" name="a4" onkeypress="fn_down()">onkeydown<br>
+ <p>
+ 기본주소 <input type="text" name="addr1" value="서울시 강남구 논현동"> <br>
+ <input type="checkbox" name="chk" onclick="fn_copy()">위 주소와 동일합니다.<br>
+ 배송지  <input type="text" name="addr2">
+ </p>
+  </form>
+ </body>
+</html>

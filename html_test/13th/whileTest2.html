@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ 
+ // 풀어보기 1
+ var a = 1;
+ while ( a<=10 ) {
+	 if ( a%2 == 1 ) {
+		 document.write(a + " ");
+	 }
+	 a++;
+ }
+ 
+ // 풀어보기 2
+ document.write("<hr>");
+ var a = 1;
+ while ( a<=10 ) {
+	 document.write("<input type='button' value='send'>");
+	 a++;
+ }
+ 
+ // 풀어보기 3
+ document.write("<hr>");
+
+ var a = 1;
+ document.write("<table border='1'>");
+ document.write("<tr>"); 
+ while (a<=5) {
+	document.write("<td width='50' align='center'>" + a + "</td>"); 
+	a++;
+ }
+ document.write("</tr>"); 
+ document.write("</table>"); 
+ 
+ // 풀어보기 4
+ document.write("<hr>");
+
+ var a = 1;
+ document.write("<table border='1'>");
+ document.write("<tr>");
+ while (a<=8) {
+	document.write("<td width='50' align='center'>" + a + "</td>");
+	a++;
+	if ( a==5 ) {
+		document.write("</tr><tr>");
+	}
+ }
+ document.write("</tr>");
+ document.write("</table>");
+
+ // 풀어보기 4 
+ document.write("<hr>");
+
+ var a = 1;
+ document.write("<table border='1'>");
+ document.write("<tr>");
+ for (var a=1; a<=8; a++) {
+	document.write("<td width='50' align='center'>" + a + "</td>");
+	if ( a==4 ) {
+		document.write("</tr><tr>");
+	}
+ }
+ document.write("</tr>");
+ document.write("</table>");
+
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

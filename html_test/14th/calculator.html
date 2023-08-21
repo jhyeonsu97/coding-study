@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+  <script>
+  /*
+	1. 연산기호 연속입력 방지
+	2. 빈 공간에 연산기호 입력 방지
+	3. 빈 공간에 결과버튼    
+  */
+function fn_add(n) { // 매개변수 : 외부값을 받는 변수
+	var number = [0, 1, 2, 3, 4, 5, 6, 7, 8, ,9];
+	var 	content = document.frm.box.value; // 입력된 내용
+	var len = content.length;
+	var str = content.substring(len-1, len); // 12+33+77*일때 
+
+	var n1 = false; // 클릭한 버튼 값의 숫자여부
+	var n2 = false; // 내용의 마지막 값의 숫자여부
+	for (var i=0; i<10; i++){
+			if( n == number[i] ) n1 = true;		
+		}	
+	for (var i=0; i<10; i++){
+			if( str == number[i] ) n2 = true;		
+	}	
+	if (content == "" && n1== false){
+		// 내용이 없고 클릭버튼 값이 연산자인 경우 실행 안함
+	} else if (content != "" && n1== false && n2==false){
+		// 내용이 있고 클릭버튼 값이 연산자이고 마지막값도 연산자
+	} else {
+		document.frm.box.value = content + n;
+	}
+}
+
+function fn_clear() {
+	document.frm.box.value = " ";
+}
+
+function fn_result() {
+	var 	content = document.frm.box.value;
+	if (content !=" "){
+		// var 	content = eval(document.frm.box.value); // eval("1+3+100");이면 연산값 얻어줌
+	document.frm.box.value = eval(content);
+	}
+}
+
+  </script>
+ <body>
+ <form name="frm">
+ <table>
+ 	<tr>
+		<Td colspan="4">
+			<input type="text" name="box">
+		</td>
+	</tr>
+	<Tr>
+		<td><input type="button" value="1" onclick="fn_add( '1' )"></td>
+		<td><input type="button" value="2" onclick="fn_add( '2' )"></td>
+		<td><input type="button" value="3"onclick="fn_add( '3' )"></td>
+		<td><input type="button" value="+"onclick="fn_add( '+' )"></td>
+	</tr>
+	<Tr>
+		<td><input type="button" value="4" onclick="fn_add( '4' )"></td>
+		<td><input type="button" value="5" onclick="fn_add( '5' )"></td>
+		<td><input type="button" value="6"onclick="fn_add( '6' )"></td>
+		<td><input type="button" value="-"onclick="fn_add( '-' )"></td>
+	</tr>
+	<Tr>
+		<td><input type="button" value="7" onclick="fn_add( '7' )"></td>
+		<td><input type="button" value="8" onclick="fn_add( '8' )"></td>
+		<td><input type="button" value="9"onclick="fn_add( '9' )"></td>
+		<td><input type="button" value="*"onclick="fn_add( '*' )"></td>
+	</tr>
+	<Tr> <!--button="reset"도 가능-->
+		<td><input type="button" value="c" onclick="fn_clear( 'c' )"></td>
+		<td><input type="button" value="0" onclick="fn_add( '0' )"></td>
+		<td><input type="button" value="."onclick="fn_add( '.' )"></td>
+		<td><input type="button" value="/"onclick="fn_add( '/' )"></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<input type="button" value="=" onclick="fn_result()">
+		</td>
+	</tr>
+</form>
+
+  
+ </body>
+</html>

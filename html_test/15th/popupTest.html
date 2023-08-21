@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+ <script>
+function fn_popup() {
+//var url = "test.html";
+  var url = "http://daum.net";
+window.open(url,"a1","width=400, height=300, left=200, top=300, resizable=no, status=yes"); // (웹주소, 별칭, 옵션)
+}
+
+var str = "10*20+30";
+document.write("eval:"+eval(str)+"<br>");
+
+var a = "100";
+var b = "200";
+var hap = Number(a) + Nunber(b);
+document.write(a+"+"+b+"="+hap+"<br>");
+
+ </script>
+ <body>
+ <a href="test.html" target="a1">회원가입</a>
+  <input type="button" value="팝업" onclick="fn_popup()">
+ </body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>function</title>
+ </head>
+
+ <script>
+
+ function fn_test() {
+	 alert("TEST");
+ }
+ function fn_name1() {	// 매개변수 : 외부값을 받는 변수
+	 alert("이름 : " + "홍길동");
+ }
+ function fn_name(name) {	// 매개변수 : 외부값을 받는 변수
+	 alert(name);
+ }
+ function fn_sum(a,b,c) {		// 대입한 값을 순서대로 출력
+	 var sum = a+b+c;
+	 alert(sum);
+ }
+ function fn_sum(a,b,c) {	
+	 var sum = Number(a) + Number(b) + Number(c);
+	 alert(sum);
+ }
+ function fn_mul(a,b,c) {	
+	 var result = Number(a) * Number(b) * Number(c);
+	 alert(result);
+ }
+
+ function fn_title() {
+	 var text = document.frm.title.value;
+	 alert(text);
+ }
+
+ </script>
+
+ <body>
+
+ <input type="button" value="알림" onclick="fn_test()">
+ <input type="button" value="이름 출력" onclick="fn_name1()">
+ <input type="button" value="이름 출력" onclick="fn_name('홍길동')">
+ <input type="button" value="합계" onclick="fn_sum(30, 50, 100)">
+ <input type="button" value="합계" onclick="fn_sum('30', '50', '100')">
+ <input type="button" value="합계" onclick="fn_mul('30', '50', '100')">
+ 
+ <hr>
+ <form name="frm">
+ <input type="text" name="title" value=""><br>
+ <input type="button" value="send" onclick="fn_title()">
+ </form>
+  
+ </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+
+ function fn_color(color) {
+	document.bgColor = color;
+ }
+ 
+ </script>
+
+ <body>
+
+ <table>
+ <script>
+	document.write("<tr><td bgcolor='#ff9966' onmouseover=\"fn_color('#ff9966')\">ff9966</td></tr>");
+						// 반드시 홑따옴표 처리 해야 됨
+						// \ \ : 의미 없는 것으로 만듦(속성값을 없앰)
+ </script>
+ </table>
+
+ </body>
+</html>

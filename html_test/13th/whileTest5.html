@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+ </head>
+
+ <script>
+ // 1 ~ 100
+ var i = 1;
+ while ( i < 31 ) {
+	 document.write(i + " ");
+	 i++;
+ }
+ document.write("<hr>");
+ var j = 1;
+ while ( true ) {
+	 if ( j == 31 ) { 
+		 break;
+	 } else if ( j==5 || j==10 ) {
+		 j++;
+		 continue; // 반복문 시작지점으로 올림
+	 }
+	 document.write(j + " ");
+	 j++;
+ }
+
+ </script>
+
+ <body>
+  
+ </body>
+</html>

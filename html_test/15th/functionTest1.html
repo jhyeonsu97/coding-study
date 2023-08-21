@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>학생회원등록</title>
+ </head>
+
+ <script>
+
+ function fn_action() {
+	 var userId = document.frm.userId.value;
+	 var pass = document.frm.pass.value;
+	 var name = document.frm.name.value;
+	 var gender = document.frm.gender.value;
+	 var cellphone = document.frm.cellphone.value;
+	 var email = document.frm.email.value;
+	 var address = document.frm.address.value;
+	 var subject = document.frm.subject.value;
+	 var len = document.frm.userId.value.length;
+	 var len2 = document.frm.pass.value.length;
+
+	 if (len<4 || len>12) {
+		 alert("아이디의 길이는 4자리 ~ 12자리 사이로 입력해 주세요.");
+		 document.frm.userId.focus();
+		 return;
+     }
+	 if (userId == "") {
+		 alert("아이디를 입력해 주세요.");
+		 return;
+	 }
+	 if (len2<8 || len2>20) {
+		 alert("암호의 길이는 8자리 ~ 20자리 사이로 입력해 주세요.");
+		 document.frm.pass.focus();
+		 return;
+	 }
+	 if (pass == "") {
+		 alert("암호를 입력해 주세요.");
+		 return;
+	 }
+	 if (name == "") {
+		 alert("이름을 입력해 주세요.");
+		 return;
+	 } else {
+		 // name = "abc12"; --> a[0]="a", a[1]="b"
+		 // isNaN("a(문자)"); true
+		 // isNaN("2(숫자)"); false
+		 // isNaN("ab12"); true;
+		 for (var i=0; i<name.length; i++) {
+		 } if (isNaN(name[i])==false) {
+			 alert("이름에 숫자가 들어가면 안 돼요~");
+			 return; // 자바스크립트 종료
+		 }
+     }
+	 if (gender == "") {
+		 alert("성별을 선택해 주세요.");
+		 return;
+	 }
+	 if (cellphone == "") {
+		 alert("핸드폰 번호를 입력해 주세요.");
+		 return;
+	 } else {
+		 // phone = "01012345678";
+		 for (var i=0; i<phone.length; i++) {
+			 if (isNaN(phone[i])==true) {
+				 alert("핸드폰 번호는 숫자만 가능합니다.");
+				 return;
+			 }
+		 }
+	 if (email == "") {
+		 alert("이메일을 입력해 주세요.");
+		 return;
+	 }
+	 if (address == "") {
+		 alert("주소를 입력해 주세요.");
+		 return;
+	 }
+	 var cnt = 0;
+	 var len = document.frm.subject.length;
+	 for (var i=0; i<len; i++) { // 0~4
+		 if (document.frm.subject[i].checked==true) {
+			 cnt++;
+		 }
+	 }
+	 if (cnt < 3) {
+		 alert("과목을 3개 이상 선택해 주세요.");
+		 return;
+	 }
+	 document.frm.submit();
+ }
+ </script>
+
+ <body>
+  
+ <form name="frm" method="post" action="save.jsp">
+ <table border="1" width="300">
+	 <caption>학생회원등록</caption>
+	 <colgroup>
+	 	<col width="80"/>
+		<col width="*%"/>
+	 </colgroup>
+	 <tr>
+		<td align="center">아이디</td>
+		<td>
+			<input type="text" name="userId">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">암호</td>
+		<td>
+			<input type="password" name="pass">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">이름</td>
+		<td>
+			<input type="text" name="name">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">성별</td>
+		<td>
+			<input type="radio" name="gender" value="M"> 남,
+			<input type="radio" name="gender" value="F"> 여
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">핸드폰</td>
+		<td>
+			<input type="number" name="cellphone">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">이메일</td>
+		<td>
+			<input type="email" name="email">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">주소</td>
+		<td>
+			<input type="text" name="address">
+		</td>
+	 </tr>
+	 <tr>
+		<td align="center">수강과목(3개 이상) 체크</td>
+		<td>
+			<input type="checkbox" name="subject" value="html"> html
+			<input type="checkbox" name="subject" value="javascript"> javascript
+			<br>
+			<input type="checkbox" name="subject" value="java"> java 
+			<input type="checkbox" name="subject" value="oracle"> oracle
+			<input type="checkbox" name="subject" value="spring"> spring
+		</td>
+	 </tr>
+ </table>
+ <br>
+ <table style="margin-left:70px;">
+	 <tr>
+	 	<th colspan="2">
+			<input type="submit" value="저장하기" onclick="fn_action();return false;"> 
+			<input type="button" value="다시쓰기">
+		</th>
+	 </tr>
+ </table>
+ </form>
+
+ </body>
+</html>
